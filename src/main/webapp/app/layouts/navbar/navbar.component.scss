@@ -25,6 +25,9 @@ Navbar
       flex-direction: column;
     }
   }
+  .navbar-brand {
+    margin-top: 16px;
+  }
 }
 .navbar-version {
   font-size: 0.65em;
@@ -55,10 +58,27 @@ Navbar
 Logo styles
 ========================================================================== */
 .logo-img {
-  height: 45px;
-  width: 45px;
-  display: inline-block;
-  vertical-align: middle;
-  background: url('../../../content/images/logo-jhipster.png') no-repeat center center;
+  height: 90px;
+  width: 100%;
+  display: block;
+  background: url('../../../content/images/logo.png') no-repeat center center;
   background-size: contain;
+}
+
+.logo {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+.navbar-title {
+  display: block;
+  text-align: center;
+  font-family: pixel;
+}
+
+.navbar-toggler {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: auto;
 }
