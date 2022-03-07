@@ -1,10 +1,31 @@
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 
+$max-width-toggle-navbar: 768px;
+$navbar-width: 250px;
 /* ==========================================================================
 Navbar
 ========================================================================== */
 
+@media (min-width: $max-width-toggle-navbar) {
+  .navbar-expand-md {
+    flex-flow: column nowrap;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: $navbar-width;
+    ul {
+      align-self: baseline;
+      align-items: center;
+    }
+    ul.navbar-nav {
+      flex-direction: column;
+    }
+  }
+}
 .navbar-version {
   font-size: 0.65em;
   color: $navbar-dark-color;
