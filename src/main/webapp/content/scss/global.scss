@@ -9,7 +9,12 @@ Bootstrap tweaks
   font-family: pixel;
   src: url(../fonts/pixel.ttf) format("opentype");
 }
-
+body {
+  height: 100%;
+}
+jhi-home {
+  height: 100%;
+}
 body,
 h1,
 h2,
