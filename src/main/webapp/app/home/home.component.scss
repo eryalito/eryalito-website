@@ -2,19 +2,48 @@
 Main page styles
 ========================================================================== */
 
+.title {
+  font-family: pixel-title;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.bubble-button {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  width: 128px;
+  height: 72px;
+  text-align: center;
+  background: url('../../content/images/bubble-150.gif') no-repeat center top;
+  background-size: contain;
+}
+
+.bubble-button-text {
+  font-family: pixel;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .happy {
   display: inline-block;
   width: 128px;
   height: 128px;
   background: url('../../content/images/happy.png') no-repeat center top;
   background-size: contain;
-  align-self: flex-end;
-  margin-left: auto;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
 .home-panel {
   height: 100%;
   display: flex;
+  flex-direction: column;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
