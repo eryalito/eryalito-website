@@ -29,6 +29,14 @@ Navbar
     margin-top: 16px;
   }
 }
+@media (max-width: ($max-width-toggle-navbar - 1)) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+}
 .navbar-version {
   font-size: 0.65em;
   color: $navbar-dark-color;
@@ -81,4 +89,8 @@ Logo styles
   margin-top: 16px;
   margin-bottom: 16px;
   margin-left: auto;
+}
+
+.anchor {
+  margin-top: 1rem;
 }
