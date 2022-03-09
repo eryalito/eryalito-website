@@ -18,17 +18,26 @@
     <span class="logo-img"></span>
     <span jhiTranslate="global.title" class="navbar-title">Eryalusdev</span>
   </a>
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
+      <!-- Anchors -->
+      <li class="nav-item dropdown pointer anchor">
+        <a class="nav-link " href="#hello"  id="">
           <span>
-            <fa-icon icon="home"></fa-icon>
-            <span jhiTranslate="global.menu.home">Home</span>
+            <!-- <fa-icon icon="flag"></fa-icon> -->
+            <span jhiTranslate="global.menu.hello">Meow</span>
+          </span>
+        </a>
+      </li>
+      <li  class="nav-item dropdown pointer">
+        <a class="nav-link " href="#know-me"  id="">
+          <span>
+            <!-- <fa-icon icon="flag"></fa-icon> -->
+            <span jhiTranslate="global.menu.language">Language</span>
           </span>
         </a>
       </li>
       <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
       <li
-        *ngSwitchCase="true"
+        *jhiHasAnyAuthority="'ROLE_ADMIN'"
         ngbDropdown
         class="nav-item dropdown pointer"
         display="dynamic"
@@ -125,6 +134,7 @@
         </ul>
       </li>
       <li
+        *jhiHasAnyAuthority="'ROLE_ADMIN'"
         ngbDropdown
         class="nav-item dropdown pointer"
         display="dynamic"
