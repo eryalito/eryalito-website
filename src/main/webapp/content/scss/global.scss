@@ -9,6 +9,10 @@ Bootstrap tweaks
   font-family: pixel;
   src: url(../fonts/pixel.ttf) format("opentype");
 }
+@font-face {
+  font-family: pixel-title;
+  src: url(../fonts/pixel_title.ttf) format("opentype");
+}
 body {
   height: 100%;
 }
@@ -21,6 +25,10 @@ h2,
 h3,
 h4 {
   font-weight: 300;
+}
+
+h1 {
+  font-size: 3rem;
 }
 
 /* Increase contrast of links to get 100% on Lighthouse Accessability Audit. Override this color if you want to change the link color, or use a Bootswatch theme */
