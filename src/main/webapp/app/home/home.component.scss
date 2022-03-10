@@ -14,11 +14,23 @@ a {
   text-align: center;
 }
 
+.arrow {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  width: 512px;
+  height: 200px;
+  text-align: center;
+  background: url('../../content/images/arrows.gif') no-repeat center top;
+  background-size: contain;
+}
 .bubble-button {
   display: flex;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5rem;
+  margin-bottom: 5rem;
   width: 128px;
   height: 72px;
   text-align: center;
