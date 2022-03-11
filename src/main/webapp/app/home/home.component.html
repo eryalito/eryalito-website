@@ -10,4 +10,10 @@
   <span class="title"><h1 jhiTranslate="home.title">Title</h1></span>
   <span class="bubble-button"><span class="bubble-button-text" jhiTranslate="global.menu.know-me">Know me</span></span>
 </div>
-<span class="happy img-fluid"></span>
+<span class="cat-frame" [hidden]="!showCatFrame">
+  <span class="cat-frame-text" [jhiTranslate]="catSaying"></span>
+</span>
+<div class="floating-cat">
+  <span #catpointer id="catpointer" class="pointer img-fluid" [hidden]="!showQuestSign"></span>
+  <span class="happy img-fluid" (click)="catPress()"></span>
+</div>

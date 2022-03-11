@@ -1,5 +1,16 @@
 {
   "home": {
-    "title": "Meow! I'm Eryalus"
+    "title": "Meow! I'm Eryalus",
+    "cat": {
+      "greeting": "Me-meow!",
+      "name": "I'm Ery ❤️",
+      "meow1": "Meow",
+      "meow2": "Meow!",
+      "meow3": "Meoooow",
+      "prr1": "Prrrr",
+      "prr2": "Prr ❤️",
+      "hiss1": "Hisssss",
+      "hiss2": "Hiss 💢"
+    }
   }
 }

@@ -1,7 +1,19 @@
 /* ==========================================================================
 Main page styles
 ========================================================================== */
-
+@import '../layouts/navbar/navbar.component.scss';
+@media (min-width: $max-width-toggle-navbar) {
+  .arrow {
+    width: 270px;
+    height: 150px;
+  }
+}
+@media (max-width: $max-width-toggle-navbar) {
+  .arrow {
+    width: 180px;
+    height: 100px;
+  }
+}
 a {
   text-decoration: none;
 }
@@ -19,8 +31,6 @@ a {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
-  width: 512px;
-  height: 200px;
   text-align: center;
   background: url('../../content/images/arrows.gif') no-repeat center top;
   background-size: contain;
@@ -45,15 +55,64 @@ a {
   margin-right: auto;
 }
 
+.cat-frame {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background: url('../../content/images/cat-frame.png') no-repeat left top;
+  height: 72px;
+  width: 128px;
+  position: fixed;
+  bottom: 128px;
+  right: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cat-frame-text {
+  font-family: pixel;
+  font-size: smaller;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  padding-bottom: 18px;
+  padding-top: 22px;
+  text-align: center;
+}
+
+
+.floating-cat {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pointer {
+  width: 128px;
+  height: 72px;
+  min-height: 72px;
+  min-width: 128px;
+  text-align: center;
+  background: url('../../content/images/pointer.gif') no-repeat center top;
+  background-size: contain;
+}
+
+.hide {
+  display: none;
+}
+
 .happy {
   display: inline-block;
   width: 128px;
   height: 128px;
   background: url('../../content/images/happy.png') no-repeat center top;
   background-size: contain;
-  position: fixed;
-  bottom: 0;
-  right: 0;
+  // position: fixed;
+  // bottom: 0;
+  // right: 0;
 }
 
 .home-panel {
