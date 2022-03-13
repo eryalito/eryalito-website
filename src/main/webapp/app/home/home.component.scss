@@ -116,9 +116,15 @@ a {
 }
 
 .home-panel {
+  background-color: white;
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.know-me-panel {
+  @extend .home-panel;
+  background-color: lightgrey;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
