@@ -2,7 +2,10 @@
   "home": {
     "title": "Meow! I'm Eryalus",
     "know-me": {
-      "title": "Who am I?"
+      "title": "Who am I?",
+      "p1": "I'm a techie with knowledge about programming, networking and that kind of IT nerd stuff, also interested in physics and mathematics.",
+      "p2": "Sci-fi series and movies huge fan (And of course our beloved masters, the cats), you can call me a nerd. I'm also a gamer, specifically of RPG, shooter and arcade ones.",
+      "p3": "Always looking to learn and try something new. I like challenges. Have I already metioned that I love cats?"
     },
     "cat": {
       "greeting": "Me-meow!",
