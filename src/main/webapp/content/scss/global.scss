@@ -7,11 +7,26 @@ Bootstrap tweaks
 ===============================================================*/
 @font-face {
   font-family: pixel;
-  src: url(../fonts/pixel.ttf) format("opentype");
+  src: url(../fonts/pixel.ttf) format('opentype');
 }
 @font-face {
   font-family: pixel-title;
-  src: url(../fonts/pixel_title.ttf) format("opentype");
+  src: url(../fonts/pixel_title.ttf) format('opentype');
+}
+.pixel {
+  font-family: pixel;
+}
+.pixel_title {
+  font-family: pixel-title;
+}
+.flex {
+  display: flex;
+  &.vertical{
+    flex-direction: column;
+  }
+}
+.h-fit-content {
+  height: fit-content !important;
 }
 body {
   height: 100%;

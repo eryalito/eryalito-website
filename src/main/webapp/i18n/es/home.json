@@ -1,6 +1,9 @@
 {
   "home": {
     "title": "¡Miau! Soy Eryalus",
+    "know-me": {
+      "title": "¿Quien soy?"
+    },
     "cat": {
       "greeting": "Mi-miau!",
       "name": "Soy Ery ❤️",
