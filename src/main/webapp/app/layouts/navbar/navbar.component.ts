@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { SessionStorageService } from 'ngx-webstorage';
@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
   version = '';
   account: Account | null = null;
   entitiesNavbarItems: any[] = [];
+  viewing = 0;
 
   constructor(
     private loginService: LoginService,
@@ -36,8 +37,16 @@ export class NavbarComponent implements OnInit {
     if (VERSION) {
       this.version = VERSION.toLowerCase().startsWith('v') ? VERSION : `v${VERSION}`;
     }
+    this.repaint();
   }
 
+  @HostListener('window:scroll', ['$event'])
+  repaint(): void {
+    const nowViewing = Math.floor(window.scrollY/window.innerHeight);
+    if (nowViewing !== this.viewing) {
+      this.viewing = nowViewing;
+    }
+  }
   ngOnInit(): void {
     this.entitiesNavbarItems = EntityNavbarItems;
     this.profileService.getProfileInfo().subscribe(profileInfo => {

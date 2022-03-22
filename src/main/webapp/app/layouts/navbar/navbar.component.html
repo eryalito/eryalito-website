@@ -22,7 +22,7 @@
         <a class="nav-link" href="#hello" id="">
           <span>
             <!-- <fa-icon icon="flag"></fa-icon> -->
-            <span jhiTranslate="global.menu.hello">Meow</span>
+            <span class="{{ viewing === 0 ? 'focused' : '' }}" jhiTranslate="global.menu.hello">Meow</span>
           </span>
         </a>
       </li>
@@ -30,7 +30,7 @@
         <a class="nav-link" href="#know-me" id="">
           <span>
             <!-- <fa-icon icon="flag"></fa-icon> -->
-            <span jhiTranslate="global.menu.know-me">Know me</span>
+            <span class="{{ viewing === 1 ? 'focused' : '' }}" jhiTranslate="global.menu.know-me">Know me</span>
           </span>
         </a>
       </li>
@@ -38,7 +38,7 @@
         <a class="nav-link" href="#skills" id="">
           <span>
             <!-- <fa-icon icon="flag"></fa-icon> -->
-            <span jhiTranslate="global.menu.skills">Skills</span>
+            <span class="{{ viewing === 2 ? 'focused' : '' }}" jhiTranslate="global.menu.skills">Skills</span>
           </span>
         </a>
       </li>
