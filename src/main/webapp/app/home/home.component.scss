@@ -115,7 +115,11 @@ a {
     padding-left: 1rem;
   }
 }
-
+@media (max-width: $max-width-toggle-navbar) {
+  .title{
+  width: 100%;
+  }
+}
 .cat-sleeping {
   position: relative;
   width: 50px;
