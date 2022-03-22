@@ -13,7 +13,7 @@ export class HomeComponent implements OnDestroy {
   catSayingPrefix = 'home.cat.';
   randomTexts = ['meow1', 'meow2', 'meow3', 'prr1', 'prr2', 'hiss1', 'hiss2'];
   firstsTexts = ['greeting', 'name'];
-  screenTextColors = ["#ffffff", '#dbebdb'];
+  screenTextColors = ["#ffffff", '#dbebdb', '#d8fbff'];
   catBlobBGColor = this.screenTextColors[0]
   catSaying = '';
   toggleCount = 0;
