@@ -94,3 +94,39 @@ Logo styles
 .anchor {
   margin-top: 1rem;
 }
+
+.navbar-div {
+  flex-direction: column;
+}
+.navbar-footer {
+  display: flex;  
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+.icon{
+  margin-left: 5px;
+  margin-right: 5px;
+  color:inherit;
+  &.left {
+  margin-left: auto;
+  }
+
+  &.right {
+    margin-right: auto;
+  }
+
+  &.github:hover {
+    color:black;
+  }
+  &.twitter:hover {
+    color:white;
+  }
+  &.mail:hover {
+    color:white;
+  }
+  &.linkedin:hover {
+    color: #0A66C2;
+  }
+}
