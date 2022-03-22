@@ -49,32 +49,6 @@ describe('Home Component', () => {
     jest.spyOn(mockRouter, 'navigate').mockImplementation(() => Promise.resolve(true));
   });
 
-  describe('ngOnInit', () => {
-    it('Should synchronize account variable with current account', () => {
-      // GIVEN
-      const authenticationState = new Subject<Account | null>();
-      mockAccountService.getAuthenticationState = jest.fn(() => authenticationState.asObservable());
-
-      // WHEN
-      comp.ngOnInit();
-
-      // THEN
-      expect(comp.account).toBeNull();
-
-      // WHEN
-      authenticationState.next(account);
-
-      // THEN
-      expect(comp.account).toEqual(account);
-
-      // WHEN
-      authenticationState.next(null);
-
-      // THEN
-      expect(comp.account).toBeNull();
-    });
-  });
-
   describe('login', () => {
     it('Should navigate to /login on login', () => {
       // WHEN
@@ -85,30 +59,4 @@ describe('Home Component', () => {
     });
   });
 
-  describe('ngOnDestroy', () => {
-    it('Should destroy authentication state subscription on component destroy', () => {
-      // GIVEN
-      const authenticationState = new Subject<Account | null>();
-      mockAccountService.getAuthenticationState = jest.fn(() => authenticationState.asObservable());
-
-      // WHEN
-      comp.ngOnInit();
-
-      // THEN
-      expect(comp.account).toBeNull();
-
-      // WHEN
-      authenticationState.next(account);
-
-      // THEN
-      expect(comp.account).toEqual(account);
-
-      // WHEN
-      comp.ngOnDestroy();
-      authenticationState.next(null);
-
-      // THEN
-      expect(comp.account).toEqual(account);
-    });
-  });
 });
