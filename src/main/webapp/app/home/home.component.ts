@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, HostListener, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
@@ -13,15 +13,39 @@ export class HomeComponent implements OnDestroy {
   catSayingPrefix = 'home.cat.';
   randomTexts = ['meow1', 'meow2', 'meow3', 'prr1', 'prr2', 'hiss1', 'hiss2'];
   firstsTexts = ['greeting', 'name'];
+  screenTextColors = ["#ffffff", '#dbebdb'];
+  catBlobBGColor = this.screenTextColors[0]
   catSaying = '';
   toggleCount = 0;
   textBackoff = 1500;
+  viewing = 0;
+  paintedIndex = 0;
   showQuestSign = true;
   showCatFrame = false;
 
   private readonly destroy$ = new Subject<void>();
 
   constructor(private accountService: AccountService, private router: Router) {}
+  @HostListener('window:scroll', ['$event'])
+  repaint(): void {
+    const nowViewing = Math.floor(window.scrollY/window.innerHeight);
+    if (nowViewing !== this.viewing) {
+      this.viewing = nowViewing;
+    }
+    if(this.viewing * window.innerHeight + window.scrollY >= 200){
+      this.paintCatBG(this.viewing +1 );
+    }else if (this.viewing === 0 && window.scrollY < 200){
+      this.paintCatBG(this.viewing);
+    }
+    // alert(this.viewing * window.innerHeight + window.scrollY)
+  }
+
+  paintCatBG(toPaintIndex: number): void{
+    if(this.paintedIndex !== toPaintIndex){
+      this.paintedIndex = toPaintIndex;
+      this.catBlobBGColor = this.screenTextColors[Math.min(this.paintedIndex, this.screenTextColors.length-1)];
+    }
+  }
 
   login(): void {
     this.router.navigate(['/login']);
