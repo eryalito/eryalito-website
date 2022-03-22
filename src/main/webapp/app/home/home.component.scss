@@ -116,6 +116,8 @@ a {
   margin-bottom: 5rem;
   width: 128px;
   height: 72px;
+  min-width: 128px;
+  min-height: 72px;
   text-align: center;
   background: url('../../content/images/bubble-150.gif') no-repeat center top;
   background-size: contain;
@@ -133,7 +135,7 @@ a {
   background-size: contain;
   background: url('../../content/images/cat-frame.png') no-repeat left top;
   height: 72px;
-  width: 128px;
+  width: 160px;
   position: fixed;
   bottom: 128px;
   right: 100px;
@@ -148,9 +150,9 @@ a {
   align-self: center;
   width: 100%;
   height: 100%;
-  padding: 10px;
-  padding-bottom: 18px;
-  padding-top: 22px;
+  margin: 10px;
+  margin-bottom: 18px;
+  margin-top: 22px;
   text-align: center;
 }
 
