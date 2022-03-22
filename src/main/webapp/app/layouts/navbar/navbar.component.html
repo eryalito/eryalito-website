@@ -11,32 +11,31 @@
   >
     <fa-icon icon="bars"></fa-icon>
   </a>
-  <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="account !== null">
+  <div class="navbar-collapse collapse navbar-div" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="account !== null">
     <ul class="navbar-nav ml-auto">
-
-  <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
-    <span class="logo-img"></span>
-    <span jhiTranslate="global.title" class="navbar-title">Eryalusdev</span>
-  </a>
+      <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
+        <span class="logo-img"></span>
+        <span jhiTranslate="global.title" class="navbar-title">Eryalusdev</span>
+      </a>
       <!-- Anchors -->
       <li class="nav-item dropdown pointer anchor">
-        <a class="nav-link " href="#hello"  id="">
+        <a class="nav-link" href="#hello" id="">
           <span>
             <!-- <fa-icon icon="flag"></fa-icon> -->
             <span jhiTranslate="global.menu.hello">Meow</span>
           </span>
         </a>
       </li>
-      <li  class="nav-item dropdown pointer">
-        <a class="nav-link " href="#know-me"  id="">
+      <li class="nav-item dropdown pointer">
+        <a class="nav-link" href="#know-me" id="">
           <span>
             <!-- <fa-icon icon="flag"></fa-icon> -->
             <span jhiTranslate="global.menu.know-me">Know me</span>
           </span>
         </a>
       </li>
-      <li  class="nav-item dropdown pointer">
-        <a class="nav-link " href="#skills"  id="">
+      <li class="nav-item dropdown pointer">
+        <a class="nav-link" href="#skills" id="">
           <span>
             <!-- <fa-icon icon="flag"></fa-icon> -->
             <span jhiTranslate="global.menu.skills">Skills</span>
@@ -197,5 +196,11 @@
         </ul>
       </li>
     </ul>
+    <span class="navbar-footer">
+      <a rel="noopener noreferrer" target="_blank" class="icon github left" href="https://github.com/eryalito"><fa-icon [size]="'2x'" [icon]="['fab', 'github']"></fa-icon></a>
+      <a rel="noopener noreferrer" target="_blank" class="icon twitter" href="https://twitter.com/adr1an366"><fa-icon [size]="'2x'" [icon]="['fab', 'twitter']"></fa-icon></a>
+      <a rel="noopener noreferrer" target="_blank" class="icon mail" href="mailto:adriancamesellemartin@gmail.com"><fa-icon [size]="'2x'" [icon]="'envelope'"></fa-icon></a>
+      <a rel="noopener noreferrer" target="_blank" class="icon linkedin right" href="https://www.linkedin.com/in/adrian-cameselle/"><fa-icon [size]="'2x'" [icon]="['fab', 'linkedin']"></fa-icon></a>
+    </span>
   </div>
 </nav>
