@@ -19,8 +19,9 @@
   </div>
 </div>
 
-<div class="skills-panel">
+<div class="skills-panel" id="skills-panel">
   <a id="skills"></a>
+  <div *ngFor="let hexInfo of hexInfoArr" class="hexagon" style="width: {{ hexInfo.w }}px; height: {{ hexInfo.h }}px; top: {{ hexInfo.y }}px; left: {{ hexInfo.x }}px" (mouseenter)="setHexStopped(true)" (mouseleave)="setHexStopped(false)"><fa-icon class="hexagon-content icon" [size]="'2x'" [icon]="hexInfo.info.icon" [title]="hexInfo.info.alt"></fa-icon><span class="hexagon-content text">{{hexInfo.info.alt}}</span></div>
   <span class="title skills-dark"><h1 jhiTranslate="home.skills.title">Title</h1></span>
   <div class="flex vertical">
     <div class="text-card flex vertical skills-dark">
