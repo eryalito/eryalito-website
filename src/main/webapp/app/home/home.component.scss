@@ -16,7 +16,7 @@ $skill_tiles: "<svg id='patternId' width='100%' height='100%' xmlns='http://www.
   .text-body {
     // text-align: justify;
     font-size: larger;
-  } 
+  }
   .home-panel {
     background-color: white;
     height: 100%;
@@ -35,14 +35,15 @@ $skill_tiles: "<svg id='patternId' width='100%' height='100%' xmlns='http://www.
 
   .skills-panel {
     display: flex;
+    position: relative;
     flex-direction: column;
-    background-color: $skills_bgc;
+    background-color: white;
     height: 100%;
     min-height: 768px;
-    background-image: url("data:image/svg+xml,"+$skill_tiles)
+    // background-image: url("data:image/svg+xml,"+$skill_tiles)
   }
 
-  .text-card {    
+  .text-card {
     padding: 1rem;
     width: 80%;
     height: fit-content;
@@ -75,14 +76,16 @@ $skill_tiles: "<svg id='patternId' width='100%' height='100%' xmlns='http://www.
 
   .skills-panel {
     display: flex;
+    position: relative;
     flex-direction: column;
-    background-color: $skills_bgc;
+    background-color: white;
     height: fit-content;
     min-height: 768px;
-    background-image: url("data:image/svg+xml,"+$skill_tiles)
+    // background-image: url("data:image/svg+xml,"+$skill_tiles);
+    z-index: 10;
   }
 
-  .text-card {    
+  .text-card {
     padding: 1rem;
     width: 80%;
     height: fit-content;
@@ -189,6 +192,7 @@ a {
 
 
 .floating-cat {
+  z-index: 65535;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -224,7 +228,55 @@ a {
   display: flex;
   flex-direction: column;
 }
-
+$hw : 110;
+$wh : ((50*$hw)/86)*1px;
+.hexagon{
+  position: absolute;
+  display: flex;
+  top: 20%;
+  left: 5%;
+  background-color: $skills_bgc;
+  width: $hw*1px;
+  height: $wh;
+  z-index: 1;
+  transition: all .5s ease-out;
+  .hexagon-content.text{
+    display: none;
+  }
+  .hexagon-content.icon{
+    display: block;
+  }
+  &:hover{
+    transform: scale(1.2);
+    transition: all .5s ease-out;
+    .hexagon-content.text{
+      display: block;
+    }
+    .hexagon-content.icon{
+      display: none;
+    }
+  }
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    width: inherit;
+    height: inherit;
+    transform: rotate(60deg);
+    background-color: inherit;
+  }
+  &::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    width: inherit;
+    height: inherit;
+    transform: rotate(-60deg);
+    background-color: inherit;
+  }
+}
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (-moz-min-device-pixel-ratio: 2),
@@ -234,5 +286,26 @@ a {
   .hipster {
     background: url('../../content/images/jhipster_family_member_0.svg') no-repeat center top;
     background-size: contain;
+  }
+}
+.hexagon-content{
+  position: absolute;
+  z-index: 1000;
+  width: 90%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  color: white;
+  transform: translate(0, -50%);
+  text-align: center;
+  font-weight: bold;
+  line-height: 25px;
+  color: inherit;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+  strong{
+    display: block;
   }
 }
