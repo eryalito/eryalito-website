@@ -176,6 +176,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 100;
 }
 
 .cat-frame-text {
@@ -198,6 +199,7 @@ a {
   right: 0;
   display: flex;
   flex-direction: column;
+  z-index: 100;
 }
 
 .pointer {
@@ -290,7 +292,7 @@ $wh : ((50*$hw)/86)*1px;
 }
 .hexagon-content{
   position: absolute;
-  z-index: 1000;
+  z-index: 2;
   width: 90%;
   margin: 0 auto;
   left: 0;
@@ -302,10 +304,17 @@ $wh : ((50*$hw)/86)*1px;
   font-weight: bold;
   line-height: 25px;
   color: inherit;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'pixel';
   font-weight: normal;
   font-size: 1rem;
   strong{
     display: block;
   }
+  &.text {
+    font-size: 0.7rem;
+  }
+}
+
+.foreground-hex{
+  z-index: 10;
 }

@@ -5,8 +5,7 @@ import { Subject } from 'rxjs';
 import { AccountService } from 'app/core/auth/account.service';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faNetworkWired, faShieldHalved } from '@fortawesome/free-solid-svg-icons';
-import { faAngular, faDocker, faJava, faLinux } from '@fortawesome/free-brands-svg-icons';
-import { Utils } from 'app/shared/utils/utils';
+import { faAngular, faDocker, faJava, faLinux, faPhp, faPython } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'jhi-home',
@@ -18,9 +17,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   randomTexts = ['meow1', 'meow2', 'meow3', 'prr1', 'prr2', 'hiss1', 'hiss2'];
   firstsTexts = ['greeting', 'name'];
   screenTextColors = ['#ffffff', '#dbebdb', '#ffffff'];
-  hexIcons: HexInfo[] = [new HexInfo(faNetworkWired, 'Networking'), new HexInfo(faDocker, 'Docker'),
-   new HexInfo(faJava, 'Java'),new HexInfo(faAngular, 'Angular'),new HexInfo(faShieldHalved, 'Cyber Security'),
-   new HexInfo(faLinux, 'Linux')];
+  hexIcons: HexInfo[] = [
+    new HexInfo(faNetworkWired, 'Networking'),
+    new HexInfo(faDocker, 'Docker'),
+    new HexInfo(faJava, 'Java'),
+    new HexInfo(faAngular, 'Angular'),
+    new HexInfo(faShieldHalved, 'Cyber Security'),
+    new HexInfo(faLinux, 'Linux'),
+    new HexInfo(faPython, 'Python'),
+    new HexInfo(faPhp, 'php'),
+  ];
   catBlobBGColor = this.screenTextColors[0];
   catSaying = '';
   toggleCount = 0;
@@ -30,36 +36,69 @@ export class HomeComponent implements OnInit, OnDestroy {
   showQuestSign = true;
   showCatFrame = false;
   hexInfoArr: HexElement[] = [];
-  lastAngle = 0;
+  maxStepSize = 5;
   lastResize = 0;
-  hexStopped = false;
   private readonly destroy$ = new Subject<void>();
 
   constructor(private accountService: AccountService, private router: Router) {}
 
   ngOnInit(): void {
-    this.hexIcons = Utils.shuffleArray(this.hexIcons)
     this.repaint();
-    this.reloadHexs();
+    // this.reloadHexs();
+    this.setupHexs();
     this.cycle();
+  }
+
+  setupHexs(): void {
+    const maxX = document.getElementById('skills-panel')?.offsetWidth ?? window.innerWidth;
+    const maxY = document.getElementById('skills-panel')?.offsetHeight ?? window.innerHeight;
+    const size = this.hexSize();
+    let counter = 0;
+    this.hexIcons.forEach(info => {
+      const x = Math.random() * (maxX - size);
+      const y = Math.random() * (maxY - size);
+      this.hexInfoArr.push(new HexElement(counter++, size, x, y, Math.random() * this.maxStepSize - this.maxStepSize / 2, Math.random() * this.maxStepSize - this.maxStepSize / 2, info));
+    });
+  }
+
+  moveHexs(): void {
+    const maxX = document.getElementById('skills-panel')?.offsetWidth ?? window.innerWidth;
+    const maxY = document.getElementById('skills-panel')?.offsetHeight ?? window.innerHeight;
+    const size = this.hexSize();
+    this.hexInfoArr.forEach(info => {
+      if(!info.stopped){
+        let newX = 0, newY = 0;
+        newX = info.x+info.incrementX;
+        newY = info.y+info.incrementY;
+        if((newX < (1) && info.incrementX < 0 )|| (newX > maxX - (size+1) && info.incrementX > 0) ){
+          info.incrementX = 0 - info.incrementX;
+        }
+        if( (newY < size/4 && info.incrementY < 0)|| (newY > maxY - size && info.incrementY > 0) ){
+          info.incrementY = 0 - info.incrementY;
+        }
+        info.x=newX
+        info.y=newY
+      }
+    });
   }
 
   cycle(): void {
     setTimeout(() => {
-      if (!this.hexStopped) {
-        this.reloadHexs(this.lastAngle);
-        this.lastAngle += 0.1;
-      }
+      this.moveHexs();
       this.cycle();
-    }, 10);
+    }, 100);
   }
 
-  setHexStopped(value: boolean): void {
-    if(value){
-      this.hexStopped = value;
-    } else {
-      setTimeout(() => this.hexStopped = false, 500)
-    }
+  setHexStopped(id: number, enter: boolean): void {
+    this.hexInfoArr.forEach(element => {
+      if(element.id === id){
+        if(enter){
+          element.stopped = true
+        }else{
+          setTimeout(() => (element.stopped = false), 500);
+        }
+      }
+    });
   }
 
   @HostListener('window:resize', ['$event'])
@@ -67,23 +106,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     const time = new Date().getTime();
     if (time >= this.lastResize + 1) {
       this.lastResize = time;
-      this.reloadHexs(this.lastAngle);
     }
-  }
-
-  reloadHexs(angleOffset = 0): void {
-    this.hexInfoArr = [];
-    const size = this.hexSize();
-    const midX = (document.getElementById('skills-panel')?.offsetWidth ?? window.innerWidth) / 2 - size / 2;
-    const midY = (document.getElementById('skills-panel')?.offsetHeight ?? window.innerHeight) / 2 - (size * 25) / 86;
-    const radius = this.hexRadius();
-    let counter = 0;
-    this.hexIcons.forEach(info => {
-      const angle = ((angleOffset + (360 * counter) / this.hexIcons.length) * Math.PI) / 180;
-      this.hexInfoArr.push(new HexElement(size, midX + radius * Math.sin(angle), midY - radius * Math.cos(angle), info));
-      counter++;
-    });
-    // setTimeout(() => this.reloadHexs(), 4000)
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -97,7 +120,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     } else if (this.viewing === 0 && window.scrollY < 200) {
       this.paintCatBG(this.viewing);
     }
-    // alert(this.viewing * window.innerHeight + window.scrollY)
   }
 
   paintCatBG(toPaintIndex: number): void {
@@ -177,7 +199,8 @@ class HexInfo {
 
 class HexElement {
   public h: number;
-  constructor(public w: number, public x: number, public y: number, public info: HexInfo) {
+  public stopped = false;
+  constructor(public id: number, public w: number, public x: number, public y: number, public incrementX: number, public incrementY: number, public info: HexInfo) {
     this.h = (50 * w) / 86;
   }
 }
