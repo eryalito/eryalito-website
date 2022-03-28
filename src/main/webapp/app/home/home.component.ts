@@ -74,9 +74,11 @@ export class HomeComponent implements OnInit, OnDestroy {
         if((newX < (1) && info.incrementX < 0 )|| (newX > maxX - (size+1) && info.incrementX > 0) ){
           info.incrementX = 0 - info.incrementX;
         }
-        if( (newY < size/4 && info.incrementY < 0)|| (newY > maxY - size && info.incrementY > 0) ){
+        if( (newY < size/3 && info.incrementY < 0)|| (newY > maxY - size && info.incrementY > 0) ){
           info.incrementY = 0 - info.incrementY;
         }
+        newX = info.x+info.incrementX;
+        newY = info.y+info.incrementY;
         info.x=newX
         info.y=newY
       }
