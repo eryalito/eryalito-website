@@ -8,7 +8,10 @@
       "p3": "Sempre produrando aprender e probar cousas novas. Gústanme os retos. Xa mencionei que me encantan os gatos?"
     },
     "skills": {
-      "title": "Que se?"
+      "title": "Que sei?",
+      "p1": "Aprendín case todo o que sei do mundo IT académicamente ou pola miña conta. Estudei un grao en telemática e un máster en ciberseguridade.",
+      "p2": "Traballando como programador durante uns anos e agora desafiándome a mín mesmo como administrador de sistemas, especializado en kubernetes e pipelines CI/CD.",
+      "p3": "Tamén traballo nos meus proxectos controlando enchufes intelixentes e bots de Telegram para automatización (ségueme en GitHub)"
     },
     "cat": {
       "greeting": "Mi-miau!",
