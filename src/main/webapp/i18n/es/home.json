@@ -7,6 +7,12 @@
       "p2": "Gran fan de series y películas de ciencia ficción. (Y por supuesto de nuestros queridos amos, los gatos), puedes llamarme nerd. También soy gamer, especialmente de los RPG, shooters y arcade.",
       "p3": "Siempre buscando aprender y probar cosas nuevas. Me gustan los retos. ¿Ya he mencionado que me encantan los gatos?"
     },
+    "skills": {
+      "title": "Que se?",
+      "p1": "He aprendido casi todo lo que conozco del mundo IT académicamente o por mi cuenta. He estudiado un grado en telemática y un máster en ciberseguridad.",
+      "p2": "Trabajando como desarrollador durante unos años y ahora retándome a mí mismo como administrador de sistemas, especializado en kubernetes y pipelines CI/CD.",
+      "p3": "También trabajo en mis proyectos controlando enchufes inteligentes y bots de Telegram para automatización (sígueme en GitHub)"
+    },
     "cat": {
       "greeting": "Mi-miau!",
       "name": "Soy Ery ❤️",
