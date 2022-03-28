@@ -9,7 +9,7 @@
     },
     "skills": {
       "title": "What do I know?",
-      "p1": "I've learnt about IT things by mostly academically and by myself. I've studied a Telematics Degree and Cybersecurity Master's Degree.",
+      "p1": "I've learnt about IT things mostly academically and by myself. I've studied a Telematics Degree and Cybersecurity Master's Degree.",
       "p2": "Been working as a developer for a couple of years and currently challenging myself as systems administrator, specialized in kubernetes and CI/CD pipelines.",
       "p3": "I'm also working on side projects like smart plug controlling and Telegram automation bots (follow me on GitHub)"
     },
