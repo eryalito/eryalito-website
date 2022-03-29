@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   catSayingPrefix = 'home.cat.';
   randomTexts = ['meow1', 'meow2', 'meow3', 'prr1', 'prr2', 'hiss1', 'hiss2'];
   firstsTexts = ['greeting', 'name'];
-  screenTextColors = ['#ffffff', '#dbebdb', '#ffffff'];
+  screenTextColors = ['#ffffff', '#dbebdb', '#ffffff', '#fff5ff'];
   hexIcons: HexInfo[] = [
     new HexInfo(faNetworkWired, 'Networking'),
     new HexInfo(faDocker, 'Docker'),

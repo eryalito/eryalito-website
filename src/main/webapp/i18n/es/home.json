@@ -13,6 +13,12 @@
       "p2": "Trabajando como desarrollador durante unos años y ahora retándome a mí mismo como administrador de sistemas, especializado en kubernetes y pipelines CI/CD.",
       "p3": "También trabajo en mis proyectos controlando enchufes inteligentes y bots de Telegram para automatización (sígueme en GitHub)"
     },
+    "experience": {
+      "title": "Que he hecho?",
+      "p1": "He trabajado en IT desde hace años. Primero como investigador en la universidad, después empecé como desarrollador web fullstack y ahora trabajo como especialista en kubernetes y automatización en una gran empresa.",
+      "p2": "Gracias a estas experiencias he aprendido sobre muchas y diferentes tecnologías y marcos de trabajo.",
+      "p3": "Creo en entender conceptos y tecnologias en lugar de ser un pica teclas, lo que me permite ver más allá para hacer un mundo mejor."
+    },
     "cat": {
       "greeting": "Mi-miau!",
       "name": "Soy Ery ❤️",

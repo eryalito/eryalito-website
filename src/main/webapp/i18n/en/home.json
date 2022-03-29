@@ -13,6 +13,12 @@
       "p2": "Been working as a developer for a couple of years and currently challenging myself as systems administrator, specialized in kubernetes and CI/CD pipelines.",
       "p3": "I'm also working on side projects like smart plug controlling and Telegram automation bots (follow me on GitHub)"
     },
+    "experience": {
+      "title": "What have I done?",
+      "p1": "I've been working on IT for years. First as a researcher in Uni, later on I moved to a position as fullstack developer and nowadays I'm working as a kubernetes and automation specialist in a large company.",
+      "p2": "Due to these experiences I've learnt about many and different technologies and working frameworks.",
+      "p3": "I believe in understanding the concepts and technologies rather than being a code monkey, allowing me to see beyond to create a better world."
+    },
     "cat": {
       "greeting": "Me-meow!",
       "name": "I'm Ery ❤️",
