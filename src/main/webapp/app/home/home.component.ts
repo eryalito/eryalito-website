@@ -15,6 +15,7 @@ import { faAngular, faDocker, faJava, faLinux, faPhp, faPython } from '@fortawes
 export class HomeComponent implements OnInit, OnDestroy {
   catSayingPrefix = 'home.cat.';
   randomTexts = ['meow1', 'meow2', 'meow3', 'prr1', 'prr2', 'hiss1', 'hiss2'];
+  panelIDs = ['home-panel', 'know-me-panel', 'skills-panel', 'experience-panel']
   firstsTexts = ['greeting', 'name'];
   screenTextColors = ['#ffffff', '#dbebdb', '#ffffff', '#fff5ff'];
   hexIcons: HexInfo[] = [
@@ -114,11 +115,26 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   @HostListener('window:scroll', ['$event'])
   repaint(): void {
-    const nowViewing = Math.floor(window.scrollY / window.innerHeight);
+    const posY = window.scrollY;
+    let accumulatedY = 0;
+    let counter = 0;
+    let nowViewing = 0;
+    
+    for(const element of this.panelIDs) {
+      accumulatedY += (document.getElementById(element)?.offsetHeight ?? window.innerHeight);
+      if(accumulatedY > posY){
+        break;
+      }
+      counter++;
+    }
+    nowViewing = counter;
+    // const nowViewing = Math.floor(window.scrollY / window.innerHeight);
     if (nowViewing !== this.viewing) {
       this.viewing = nowViewing;
     }
-    if (this.viewing * window.innerHeight + window.scrollY >= 200) {
+    
+    // alert(offset)
+    if (posY + window.innerHeight - 175 >= accumulatedY) {
       this.paintCatBG(this.viewing + 1);
     } else if (this.viewing === 0 && window.scrollY < 200) {
       this.paintCatBG(this.viewing);

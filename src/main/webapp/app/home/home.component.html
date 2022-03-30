@@ -1,4 +1,4 @@
-<div class="home-panel">
+<div id="home-panel" class="home-panel">
   <a id="hello"></a>
   <span class="title"><h1 jhiTranslate="home.title">Title</h1></span>
   <a class="bubble-button" href="#know-me"><span class="bubble-button-text" jhiTranslate="global.menu.know-me">Know me</span></a>
@@ -6,7 +6,7 @@
   <span class="arrow hidden"></span>
 </div>
 
-<div class="know-me-panel">
+<div id="know-me-panel" class="know-me-panel">
   <a id="know-me"></a>
   <span class="title know-me-dark"><h1 jhiTranslate="home.know-me.title">Title</h1></span>
   <div class="flex vertical">
@@ -19,7 +19,7 @@
   </div>
 </div>
 
-<div class="skills-panel" id="skills-panel">
+<div id="skills-panel" class="skills-panel">
   <a id="skills"></a>
   <div *ngFor="let hexInfo of hexInfoArr" class="hexagon" style="width: {{ hexInfo.w }}px; height: {{ hexInfo.h }}px; top: {{ hexInfo.y }}px; left: {{ hexInfo.x }}px" (mouseenter)="setHexStopped(hexInfo.id, true)" (mouseleave)="setHexStopped(hexInfo.id, false)"><fa-icon class="hexagon-content icon" [size]="'2x'" [icon]="hexInfo.info.icon" [title]="hexInfo.info.alt"></fa-icon><span class="hexagon-content text">{{hexInfo.info.alt}}</span></div>
   <span class="title skills-dark foreground-hex"><h1 jhiTranslate="home.skills.title">Title</h1></span>
@@ -32,7 +32,7 @@
   </div>
 </div>
 
-<div class="experience-panel">
+<div id="experience-panel" class="experience-panel">
   <a id="experience"></a>
   <span class="title experience-dark"><h1 jhiTranslate="home.experience.title">Title</h1></span>
   <div class="flex vertical">
