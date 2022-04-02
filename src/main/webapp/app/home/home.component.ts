@@ -51,6 +51,13 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.cycle();
   }
 
+  scrollToElement(element: string): void {
+    const $element = document.getElementById(element);
+    if ($element){
+      $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    }
+  }
+
   setupHexs(): void {
     const maxX = document.getElementById('skills-panel')?.offsetWidth ?? window.innerWidth;
     const maxY = document.getElementById('skills-panel')?.offsetHeight ?? window.innerHeight;

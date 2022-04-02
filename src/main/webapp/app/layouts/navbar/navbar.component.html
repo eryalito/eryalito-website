@@ -19,7 +19,7 @@
       </a>
       <!-- Anchors -->
       <li class="nav-item dropdown pointer anchor">
-        <a class="nav-link" href="#hello" id="">
+        <a class="nav-link" (click)="scrollToElement('hello')" id="">
           <span>
             <!-- <fa-icon icon="flag"></fa-icon> -->
             <span class="{{ viewing === 0 ? 'focused' : '' }}" jhiTranslate="global.menu.hello">Meow</span>
@@ -27,7 +27,7 @@
         </a>
       </li>
       <li class="nav-item dropdown pointer">
-        <a class="nav-link" href="#know-me" id="">
+        <a class="nav-link" (click)="scrollToElement('know-me')" id="">
           <span>
             <!-- <fa-icon icon="flag"></fa-icon> -->
             <span class="{{ viewing === 1 ? 'focused' : '' }}" jhiTranslate="global.menu.know-me">Know me</span>
@@ -35,7 +35,7 @@
         </a>
       </li>
       <li class="nav-item dropdown pointer">
-        <a class="nav-link" href="#skills" id="">
+        <a class="nav-link" (click)="scrollToElement('skills')" id="">
           <span>
             <!-- <fa-icon icon="flag"></fa-icon> -->
             <span class="{{ viewing === 2 ? 'focused' : '' }}" jhiTranslate="global.menu.skills">Skills</span>
@@ -43,7 +43,7 @@
         </a>
       </li>
       <li class="nav-item dropdown pointer">
-        <a class="nav-link" href="#experience" id="">
+        <a class="nav-link" (click)="scrollToElement('experience')" id="">
           <span>
             <!-- <fa-icon icon="flag"></fa-icon> -->
             <span class="{{ viewing === 3 ? 'focused' : '' }}" jhiTranslate="global.menu.experience">Experience</span>

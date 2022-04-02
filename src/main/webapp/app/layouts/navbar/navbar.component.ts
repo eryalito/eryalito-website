@@ -40,6 +40,13 @@ export class NavbarComponent implements OnInit {
     this.repaint();
   }
 
+  scrollToElement(element: string): void {
+    const $element = document.getElementById(element);
+    if ($element){
+      $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    }
+  }
+
   @HostListener('window:scroll', ['$event'])
   repaint(): void {
     const nowViewing = Math.floor(window.scrollY/window.innerHeight);
