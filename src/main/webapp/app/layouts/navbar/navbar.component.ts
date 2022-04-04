@@ -71,8 +71,10 @@ export class NavbarComponent implements OnInit {
     this.translateService.use(languageKey);
   }
 
-  collapseNavbar(): void {
-    this.isNavbarCollapsed = true;
+  collapseNavbar(timeoutTime = 0): void {
+    setTimeout(() => {
+      this.isNavbarCollapsed = true;
+    }, timeoutTime)
   }
 
   login(): void {
