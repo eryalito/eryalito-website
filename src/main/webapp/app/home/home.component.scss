@@ -253,7 +253,7 @@ a {
   flex-direction: column;
 }
 $hw : 110;
-$wh : ((50*$hw)/86)*1px;
+$wh : calc((50 * $hw) / 86)*1px;
 .hexagon{
   position: absolute;
   display: flex;
