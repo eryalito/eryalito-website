@@ -25,6 +25,7 @@ export class NavbarComponent implements OnInit {
   account: Account | null = null;
   entitiesNavbarItems: any[] = [];
   viewing = 0;
+  isHome = false;
 
   constructor(
     private loginService: LoginService,
@@ -37,10 +38,22 @@ export class NavbarComponent implements OnInit {
     if (VERSION) {
       this.version = VERSION.toLowerCase().startsWith('v') ? VERSION : `v${VERSION}`;
     }
+    this.router.events.subscribe(() => {
+      const base = this.router.url.split("#")[0];
+      this.isHome = base === '/';
+    })
     this.repaint();
   }
 
   scrollToElement(element: string): void {
+    if (!this.isHome) {
+      this.router.navigate(['/'], {fragment: element}).then(() => this.moveTo(element))
+    }else{
+      this.moveTo(element)
+    }
+  }
+
+  moveTo(element: string): void {
     const $element = document.getElementById(element);
     if ($element){
       $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
