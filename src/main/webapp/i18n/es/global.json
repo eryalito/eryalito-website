@@ -2,6 +2,10 @@
   "global": {
     "title": "Eryalus",
     "browsehappy": "Está usando un navegador <strong>no actualizado</strong>. Por favor, <a href=\"http://browsehappy.com/?locale=es\">actualice su navegador</a> para mejorar su experiencia.",
+    "main": {
+      "sourcecode_at": "Código fuente en",
+      "github": "GitHub"
+    },
     "menu": {
       "home": "Inicio",
       "know-me": "Sobre mi",
