@@ -27,3 +27,12 @@
 .outlet {
   height: 100%;
 }
+
+.source-banner{
+  z-index: 65535;
+  position: fixed;
+  bottom: 0;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
