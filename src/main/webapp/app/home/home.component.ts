@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 
 import { AccountService } from 'app/core/auth/account.service';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { faCat, faNetworkWired, faShieldHalved } from '@fortawesome/free-solid-svg-icons';
+import { faCat, faNetworkWired, faShieldHalved, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faAngular, faDocker, faJava, faLinux, faPhp, faPython } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     new HexInfo(faPython, 'Python'),
     new HexInfo(faPhp, 'php'),
     new HexInfo(faCat, 'Meow'),
+    new HexInfo(faXmark, "Kubernetes", "kubernetes-svgrepo-com.svg", "SVG")
   ];
   catBlobBGColor = this.screenTextColors[0];
   catSaying = '';
@@ -220,7 +221,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 }
 
 class HexInfo {
-  constructor(public icon: IconDefinition, public alt: string) {}
+  constructor(public icon: IconDefinition, public alt: string, public svg : string = "", public type : string = "FA") {}
 }
 
 class HexElement {
