@@ -254,6 +254,7 @@ a {
 }
 $hw : 110;
 $wh : calc((50 * $hw) / 86)*1px;
+
 .hexagon{
   position: absolute;
   display: flex;
@@ -270,6 +271,10 @@ $wh : calc((50 * $hw) / 86)*1px;
   .hexagon-content.icon{
     display: block;
   }
+  .hexagon-content.svg{
+    display: block;
+    width: 47px;
+  }
   &:hover{
     transform: scale(1.2);
     transition: all .5s ease-out;
@@ -277,6 +282,9 @@ $wh : calc((50 * $hw) / 86)*1px;
       display: block;
     }
     .hexagon-content.icon{
+      display: none;
+    }
+    .hexagon-content.svg{
       display: none;
     }
   }
