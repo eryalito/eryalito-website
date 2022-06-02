@@ -17,4 +17,4 @@
     #     mode: '0644'
     #     backup: yes
     - name: Restart service
-      raw: systemctl restart web.service
+      raw: sudo systemctl restart web.service
