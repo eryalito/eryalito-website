@@ -26,6 +26,8 @@ steps:
       - whoami
       - echo "[webservers]" > hosts
       - echo $host >> hosts
+      - echo "[defaults]" > hosts
+      - echo "host_key_checking = False" > hosts
       - mkdir /root/.ssh
       - echo "$ssh_key" > /root/.ssh/id_rsa
       - wc -l /root/.ssh/id_rsa
