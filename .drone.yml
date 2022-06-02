@@ -23,7 +23,6 @@ steps:
       ssh_key:
         from_secret: ssh_key
     commands:
-      - whoami
       - echo "[webservers]" > hosts
       - echo $host >> hosts
       - echo "[defaults]" > ansible.cfg
@@ -31,5 +30,4 @@ steps:
       - mkdir /root/.ssh
       - echo "$ssh_key" > /root/.ssh/id_rsa
       - chmod 600 /root/.ssh/id_rsa
-      - wc -l /root/.ssh/id_rsa
       - ansible-playbook ansible-deploy.yaml -i hosts
