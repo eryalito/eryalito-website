@@ -19,5 +19,4 @@
     - name: Restart service
       ansible.builtin.systemd:
         state: restarted
-        daemon_reload: yes
         name: web
