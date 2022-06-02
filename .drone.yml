@@ -7,4 +7,5 @@ steps:
   - name: validate frontend
     image: eryalus/jhipster-ci:v0.1.amd64
     commands:
+      - npm install
       - npm test
