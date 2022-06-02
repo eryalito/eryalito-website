@@ -27,4 +27,5 @@ steps:
       - echo $host >> hosts
       - mkdir /root/.ssh
       - echo "$ssh_key" > /root/.ssh/id_rsa
+      - wc -l /root/.ssh/id_rsa
       - ansible-playbook ansible-deploy.yaml -i hosts
