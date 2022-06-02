@@ -7,8 +7,7 @@
   tasks:
     - name: Set jar variable
       set_fact:
-        app_version: 0.0.1
-        jar_file: eryalusdev-{{ app_version }}-SNAPSHOT.jar
+        jar_file: eryalusdev-0.0.1-SNAPSHOT.jar
     - name: Copy jar file
       copy:
         src: target/{{ jar_file }}
