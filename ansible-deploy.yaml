@@ -17,6 +17,4 @@
     #     mode: '0644'
     #     backup: yes
     - name: Restart service
-      ansible.builtin.systemd:
-        state: restarted
-        name: web
+      raw: systemctl restart web.service
