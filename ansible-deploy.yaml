@@ -19,4 +19,4 @@
     - name: Stop current screen
       raw: screen -X -S web kill
     - name: Run new screen
-      raw: screen -dm -S web java -jar /home/{{ lookup('env', 'host_user') }}/{{ jar_file }}
+      raw: screen -dm -S web "java -jar /home/{{ lookup('env', 'host_user') }}/{{ jar_file }}"
