@@ -27,7 +27,7 @@ steps:
       - echo "[webservers]" > hosts
       - echo $host >> hosts
       - echo "[defaults]" > ansible.cfg
-      - echo "host_key_checking = False" > ansible.cfg
+      - echo "host_key_checking = False" >> ansible.cfg
       - mkdir /root/.ssh
       - echo "$ssh_key" > /root/.ssh/id_rsa
       - wc -l /root/.ssh/id_rsa
