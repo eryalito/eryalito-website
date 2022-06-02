@@ -10,6 +10,7 @@
         jar_file: eryalusdev-0.0.1-SNAPSHOT.jar
     - name: Copy jar file
       copy:
+        remote_src: false
         src: target/{{ jar_file }}
         dest: /tmp/{{ jar_file }}
         owner: "{{ lookup('env', 'host_user') }}"
