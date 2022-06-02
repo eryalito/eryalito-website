@@ -4,15 +4,15 @@ type: docker
 name: Main pipeline
 
 steps:
-  - name: Validate frontend
-    image: eryalus/jhipster-ci:v0.1.amd64
-    commands:
-      - npm install
-      - npm test
-  - name: Validate build
-    image: eryalus/jhipster-ci:v0.1.amd64
-    commands:
-      - ./mvnw clean verify
+  # - name: Validate frontend
+  #   image: eryalus/jhipster-ci:v0.1.amd64
+  #   commands:
+  #     - npm install
+  #     - npm test
+  # - name: Validate build
+  #   image: eryalus/jhipster-ci:v0.1.amd64
+  #   commands:
+  #     - ./mvnw clean verify
   - name: Deploy - PRO
     image: eryalus/ansible:latest
     environment:
@@ -31,6 +31,6 @@ steps:
       - echo "$ssh_key" > /root/.ssh/id_rsa
       - chmod 600 /root/.ssh/id_rsa
       - ansible-playbook ansible-deploy.yaml -i hosts
-    when:
-      event: ["promote"]
-      target: ["pro"]
+    # when:
+    #   event: ["promote"]
+    #   target: ["pro"]

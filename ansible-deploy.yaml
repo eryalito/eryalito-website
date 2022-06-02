@@ -8,15 +8,16 @@
     - name: Set jar variable
       set_fact:
         jar_file: eryalusdev-0.0.1-SNAPSHOT.jar
-    - name: Copy jar file
-      copy:
-        src: target/{{ jar_file }}
-        dest: /home/{{ lookup('env', 'host_user') }}/{{ jar_file }}
-        owner: "{{ lookup('env', 'host_user') }}"
-        group: "{{ lookup('env', 'host_user') }}"
-        mode: '0644'
-        backup: yes
-    - name: Stop current screen
-      raw: screen -X -S web kill
-    - name: Run new screen
-      raw: screen -dm -S web "java -jar /home/{{ lookup('env', 'host_user') }}/{{ jar_file }}"
+    # - name: Copy jar file
+    #   copy:
+    #     src: target/{{ jar_file }}
+    #     dest: /home/{{ lookup('env', 'host_user') }}/{{ jar_file }}
+    #     owner: "{{ lookup('env', 'host_user') }}"
+    #     group: "{{ lookup('env', 'host_user') }}"
+    #     mode: '0644'
+    #     backup: yes
+    - name: Restart service
+      ansible.builtin.systemd:
+        state: restarted
+        daemon_reload: yes
+        name: web
