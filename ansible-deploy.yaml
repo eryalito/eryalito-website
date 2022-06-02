@@ -11,12 +11,12 @@
     - name: Copy jar file
       copy:
         src: target/{{ jar_file }}
-        dest: /tmp/{{ jar_file }}
+        dest: /home/{{ lookup('env', 'host_user') }}/{{ jar_file }}
         owner: "{{ lookup('env', 'host_user') }}"
         group: "{{ lookup('env', 'host_user') }}"
         mode: '0644'
         backup: yes
-    - name: Create a file called '/tmp/testfile.txt' with the content 'hello world'.
-      copy:
-        content: hello worldn
-        dest: /tmp/testfile.txt
+    - name: Stop current screen
+      raw: screen -X -S web kill
+    - name: Run new screen
+      raw: screen -dm -S test java -jar /home/{{ lookup('env', 'host_user') }}/{{ jar_file }}
