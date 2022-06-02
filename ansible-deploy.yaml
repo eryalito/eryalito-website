@@ -1,0 +1,11 @@
+---
+- name: This is a hello-world example
+  hosts: 
+    - "{{ lookup('env', 'host') }}"
+  remote_user: "{{ lookup('env', 'host_user') }}"
+
+  tasks:
+    - name: Create a file called '/tmp/testfile.txt' with the content 'hello world'.
+      copy:
+        content: hello worldn
+        dest: /tmp/testfile.txt
