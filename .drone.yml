@@ -23,6 +23,7 @@ steps:
       ssh_key:
         from_secret: ssh_key
     commands:
+      - whoami
       - echo "[webservers]" > hosts
       - echo $host >> hosts
       - mkdir /root/.ssh
