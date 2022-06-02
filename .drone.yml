@@ -9,3 +9,8 @@ steps:
     commands:
       - npm install
       - npm test
+  - name: validate build
+    image: eryalus/jhipster-ci:v0.1.amd64
+    commands:
+      - ls
+      - ./mvnw clean verify
