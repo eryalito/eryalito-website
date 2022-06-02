@@ -30,5 +30,6 @@ steps:
       - echo "host_key_checking = False" >> ansible.cfg
       - mkdir /root/.ssh
       - echo "$ssh_key" > /root/.ssh/id_rsa
+      - chmod 600 /root/.ssh/id_rsa
       - wc -l /root/.ssh/id_rsa
       - ansible-playbook ansible-deploy.yaml -i hosts
