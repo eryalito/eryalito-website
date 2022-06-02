@@ -23,6 +23,8 @@ steps:
       ssh_key:
         from_secret: ssh_key
     commands:
+      - ls
+      - pwd
       - echo "[webservers]" > hosts
       - echo $host >> hosts
       - echo "[defaults]" > ansible.cfg
