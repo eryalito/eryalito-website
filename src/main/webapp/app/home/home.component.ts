@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     new HexInfo(faPython, 'Python'),
     new HexInfo(faPhp, 'php'),
     new HexInfo(faCat, 'Meow'),
-    new HexInfo(faXmark, "Kubernetes", "kubernetes-svgrepo-com.svg", "SVG")
+    new HexInfo(faXmark, "Kubernetes", "kubernetes-svgrepo-com.svg", "SVG"),
+    new HexInfo(faXmark, "Ansible", "ansible-svgrepo-com.svg", "SVG")
   ];
   catBlobBGColor = this.screenTextColors[0];
   catSaying = '';
