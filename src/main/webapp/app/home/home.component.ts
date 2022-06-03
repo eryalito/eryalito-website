@@ -19,16 +19,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   firstsTexts = ['greeting', 'name'];
   screenTextColors = ['#ffffff', '#dbebdb', '#ffffff', '#fff5ff'];
   hexIcons: HexInfo[] = [
-    new HexInfo(faNetworkWired, 'Networking'),
     new HexInfo(faDocker, 'Docker'),
     new HexInfo(faJava, 'Java'),
     new HexInfo(faAngular, 'Angular'),
-    new HexInfo(faShieldHalved, 'Cyber Security'),
     new HexInfo(faLinux, 'Linux'),
     new HexInfo(faPython, 'Python'),
     new HexInfo(faPhp, 'php'),
     new HexInfo(faCat, 'Meow'),
-    new HexInfo(faXmark, "Kubernetes", "kubernetes-svgrepo-com.svg", "SVG")
+    new HexInfo(faNetworkWired, 'Networking', 'network-svgrepo-com.svg', 'SVG'),
+    new HexInfo(faShieldHalved, 'Cyber Security', 'key-svgrepo-com.svg', 'SVG'),
+    new HexInfo(faXmark, "Kubernetes", "kubernetes-svgrepo-com.svg", "SVG"),
+    new HexInfo(faXmark, "Ansible", "ansible-svgrepo-com.svg", "SVG")
   ];
   catBlobBGColor = this.screenTextColors[0];
   catSaying = '';
