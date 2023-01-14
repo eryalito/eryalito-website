@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { SessionStorageService } from 'ngx-webstorage';
@@ -9,7 +9,7 @@ import { LANGUAGES } from '../shared/constants';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   inProduction?: boolean;
   isNavbarCollapsed = true;
   languages = LANGUAGES;
@@ -58,8 +58,6 @@ export class NavbarComponent implements OnInit {
     if (nowViewing !== this.viewing) {
       this.viewing = nowViewing;
     }
-  }
-  ngOnInit(): void {
   }
 
   changeLanguage(languageKey: string): void {
