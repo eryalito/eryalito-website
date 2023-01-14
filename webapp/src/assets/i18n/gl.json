@@ -1,0 +1,41 @@
+{
+    "global": {
+        "title": "Miau! Son Eryalus",
+        "know-me": "Sobre min"
+    },
+    "banners": {
+        "source": "Código fonte en"
+    },
+    "home": {
+        "title": "Miau! Son Eryalus",
+        "know-me": {
+            "title": "Quen son?",
+            "p1": "Son un friki da tecnoloxía con coñecementos de programación, redes e ese tipo de cousas, tamén interesado en física e matemáticas.",
+            "p2": "Gran fan de series e películas de ciencia fición. (E por suposto dos nosos queridos amos, os gatos), podes chamarme nerd. Tambén son gamer, especialmente dos RPG, shooters y arcade.",
+            "p3": "Sempre produrando aprender e probar cousas novas. Gústanme os retos. Xa mencionei que me encantan os gatos?"
+        },
+        "skills": {
+            "title": "Que sei?",
+            "p1": "Aprendín case todo o que sei do mundo IT académicamente ou pola miña conta. Estudei un grao en telemática e un máster en ciberseguridade.",
+            "p2": "Traballando como programador durante uns anos e agora desafiándome a mín mesmo como administrador de sistemas, especializado en kubernetes e pipelines CI/CD.",
+            "p3": "Tamén traballo nos meus proxectos controlando enchufes intelixentes e bots de Telegram para automatización (ségueme en GitHub)"
+        },
+        "experience": {
+            "title": "Que fixen?",
+            "p1": "Traballo en IT dende fai anos. Primeiro como investigador na universidade, despois comecei como desenvolvedor web fullstack e agora traballo como especialista en kubernetes e automatización nunha gran empresa.",
+            "p2": "Grazas a estas experiencias aprendín acerca de moitas e diferentes tecnoloxías e marcos de traballo.",
+            "p3": "Creo en entender conceptos e tecnoloxias na contra de ser un pica teclas, o que me permite ver máis alá para facer un mundo mellor."
+        },
+        "cat": {
+            "greeting": "Mi-miau!",
+            "name": "Son Ery ❤️",
+            "meow1": "Miau",
+            "meow2": "Miau!",
+            "meow3": "Miaaaau",
+            "prr1": "Prrrr",
+            "prr2": "Prr ❤️",
+            "hiss1": "Hisssss",
+            "hiss2": "Hiss 💢"
+        }
+    }
+}

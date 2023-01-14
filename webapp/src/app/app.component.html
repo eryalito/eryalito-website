@@ -1,0 +1,19 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{ "global.title" | translate }}</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <div>
+    <app-navbar></app-navbar>
+  </div>
+  <div class="container-fluid main-panel">
+      <router-outlet></router-outlet>
+      <div class="source-banner">
+        <span><span>{{ "banners.source" | translate }}</span>&nbsp;<a rel="noopener noreferrer" title="GitHub" target="_blank"
+            href="https://github.com/Eryalito/eryalus-website">Github</a></span>
+      </div>
+  </div>
+</body>
