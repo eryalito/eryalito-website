@@ -8,7 +8,11 @@ on:
 
 jobs:
   test:
-    working-directory: webapp
+    env:
+      working-directory: ./webapp
+    defaults:
+      run:
+        working-directory: ${{ env.working-directory }}
     runs-on: ubuntu-latest
     steps:
     - name: Install dependencies
