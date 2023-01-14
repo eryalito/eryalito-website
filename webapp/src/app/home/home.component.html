@@ -1,0 +1,58 @@
+<div id="home-panel" class="home-panel">
+    <a id="hello"></a>
+    <span class="title"><h1>{{ "home.title" | translate }}</h1></span>
+    <a class="bubble-button" (click)="scrollToElement('know-me')"><span class="bubble-button-text">{{ "global.know-me" | translate }}</span></a>
+    <span class="arrow"></span>
+    <span class="arrow hidden"></span>
+  </div>
+  
+  <div id="know-me-panel" class="know-me-panel">
+    <a id="know-me"></a>
+    <span class="title know-me-dark"><h1>{{ "home.know-me.title" | translate }}</h1></span>
+    <div class="flex vertical">
+      <div class="text-card flex vertical know-me-dark">
+        <p class="pixel text-body">{{ "home.know-me.p1" | translate }}</p>
+        <p class="pixel text-body">{{ "home.know-me.p3" | translate }}</p>
+        <p class="pixel text-body">{{ "home.know-me.p2" | translate }}</p>
+        <span class="cat-sleeping"></span>
+      </div>
+    </div>
+  </div>
+  
+  <div id="skills-panel" class="skills-panel">
+    <a id="skills"></a>
+    <div *ngFor="let hexInfo of hexInfoArr"><div class="hexagon" style="width: {{ hexInfo.w }}px; height: {{ hexInfo.h }}px; top: {{ hexInfo.y }}px; left: {{ hexInfo.x }}px" (mouseenter)="setHexStopped(hexInfo.id, true)" (mouseleave)="setHexStopped(hexInfo.id, false)">
+      <fa-icon *ngIf="hexInfo.info.type == 'FA'" class="hexagon-content icon" [size]="'2x'" [icon]="hexInfo.info.icon" [title]="hexInfo.info.alt"></fa-icon>
+      <img *ngIf="hexInfo.info.type == 'SVG'" class="hexagon-content svg" src="../../assets/images/svg/{{ hexInfo.info.svg }}">
+      <span class="hexagon-content text wrap">{{hexInfo.info.alt}}</span>
+    </div></div>
+    <span class="title skills-dark foreground-hex"><h1>{{ "home.skills.title" | translate }}</h1></span>
+    <div class="flex vertical">
+      <div class="text-card flex vertical skills-dark foreground-hex">
+        <p class="pixel text-body">{{ "home.skills.p1" | translate }}</p>
+        <p class="pixel text-body">{{ "home.skills.p2" | translate }}</p>
+        <p class="pixel text-body">{{ "home.skills.p3" | translate }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <div id="experience-panel" class="experience-panel">
+    <a id="experience"></a>
+    <span class="title experience-dark"><h1>{{ "home.experience.title" | translate }}</h1></span>
+    <div class="flex vertical">
+      <div class="text-card flex vertical experience-dark">
+        <p class="pixel text-body">{{ "home.experience.p1" | translate }}</p>
+        <p class="pixel text-body">{{ "home.experience.p2" | translate }}</p>
+        <p class="pixel text-body">{{ "home.experience.p3" | translate }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <span class="cat-frame" style="background-color: {{ catBlobBGColor }}" [hidden]="!showCatFrame">
+    <span class="cat-frame-text">{{ catSaying | translate }}</span>
+  </span>
+  <div class="floating-cat">
+    <span #catpointer id="catpointer" class="pointer img-fluid" [hidden]="!showQuestSign"></span>
+    <span class="happy img-fluid" (click)="catPress()"></span>
+  </div>
+  

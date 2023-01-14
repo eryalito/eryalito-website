@@ -1,0 +1,32 @@
+$max-width-toggle-navbar: 768px;
+$navbar-width: 250px;
+$navbar-dark-color: #343a40;
+
+.pixel {
+  font-family: pixel;
+}
+.pixel_title {
+  font-family: pixel-title;
+}
+.flex {
+  display: flex;
+  &.vertical{
+    flex-direction: column;
+  }
+}
+
+.wrap {
+	word-wrap: break-word;
+}
+
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #fff;
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	border-radius: 0.15rem;
+}
