@@ -9,7 +9,7 @@ import { takeUntil } from 'rxjs/operators';
  * A wrapper directive on top of the translate pipe as the inbuilt translate directive from ngx-translate is too verbose and buggy
  */
 @Directive({
-  selector: '[translate]',
+  selector: '[appTranslate]',
 })
 export class TranslateDirective implements OnChanges, OnInit, OnDestroy {
   @Input() translate!: string;

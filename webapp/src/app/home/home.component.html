@@ -22,8 +22,8 @@
   <div id="skills-panel" class="skills-panel">
     <a id="skills"></a>
     <div *ngFor="let hexInfo of hexInfoArr"><div class="hexagon" style="width: {{ hexInfo.w }}px; height: {{ hexInfo.h }}px; top: {{ hexInfo.y }}px; left: {{ hexInfo.x }}px" (mouseenter)="setHexStopped(hexInfo.id, true)" (mouseleave)="setHexStopped(hexInfo.id, false)">
-      <fa-icon *ngIf="hexInfo.info.type == 'FA'" class="hexagon-content icon" [size]="'2x'" [icon]="hexInfo.info.icon" [title]="hexInfo.info.alt"></fa-icon>
-      <img *ngIf="hexInfo.info.type == 'SVG'" class="hexagon-content svg" src="../../assets/images/svg/{{ hexInfo.info.svg }}">
+      <fa-icon *ngIf="hexInfo.info.type === 'FA'" class="hexagon-content icon" [size]="'2x'" [icon]="hexInfo.info.icon" [title]="hexInfo.info.alt"></fa-icon>
+      <img *ngIf="hexInfo.info.type === 'SVG'" class="hexagon-content svg" src="../../assets/images/svg/{{ hexInfo.info.svg }}">
       <span class="hexagon-content text wrap">{{hexInfo.info.alt}}</span>
     </div></div>
     <span class="title skills-dark foreground-hex"><h1>{{ "home.skills.title" | translate }}</h1></span>
