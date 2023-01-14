@@ -8,8 +8,9 @@ on:
 
 jobs:
   test:
+    name: Test webapp (lint & build)
     env:
-      working-directory: ./webapp
+      working-directory: webapp
     defaults:
       run:
         working-directory: ${{ env.working-directory }}
