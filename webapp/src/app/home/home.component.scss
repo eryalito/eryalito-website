@@ -1,0 +1,354 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import '../global.scss';
+
+/* ==========================================================================
+Main page styles
+========================================================================== */
+$know_me_bgc: #daebda;
+$know_me_bgc_dark: #bac8ba;
+$skills_bgc: #d8fbff;
+$skills_bgc_dark: #a1c7cb;
+$experience_bgc: #fff5ff;
+$experience_bgc_dark: #ccccff;
+$know_me_tiles: "<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='69.141' height='40' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(120, 30%, 89%, 1)'/><path d='M69.212 40H46.118L34.57 20 46.118 0h23.094l11.547 20zM57.665 60H34.57L23.023 40 34.57 20h23.095l11.547 20zm0-40H34.57L23.023 0 34.57-20h23.095L69.212 0zM34.57 60H11.476L-.07 40l11.547-20h23.095l11.547 20zm0-40H11.476L-.07 0l11.547-20h23.095L46.118 0zM23.023 40H-.07l-11.547-20L-.07 0h23.094L34.57 20z'  stroke-width='1' stroke='hsla(259, 0%, 0%, 0.58)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>";
+$experience_tiles: "<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='20' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(240, 100%, 98%, 1)'/><path d='M40 0L20-10V0l20 10zm0 10L20 0v10l20 10zm0 10L20 10v10l20 10zM0 20l20-10v10L0 30zm0-10L20 0v10L0 20zM0 0l20-10V0L0 10z'  stroke-width='0.5' stroke='hsla(120, 3%, 40%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>";
+@import '../navbar/navbar.component.scss';
+@media (min-width: 992px) {
+  .arrow {
+    width: 270px;
+    height: 150px;
+  }
+  .text-body {
+    // text-align: justify;
+    font-size: larger;
+  }
+  .home-panel {
+    background-color: white;
+    height: 100%;
+    display: flex;
+    min-height: 768px;
+    flex-direction: column;
+  }
+  .know-me-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: $know_me_bgc;
+    min-height: 768px;
+    height: 100%;
+    background-image: url("data:image/svg+xml,"+$know_me_tiles)
+  }
+
+  .skills-panel {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: white;
+    height: 100%;
+    min-height: 768px;
+    // background-image: url("data:image/svg+xml,"+$skill_tiles)
+  }
+  .experience-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: $experience_bgc;
+    min-height: 768px;
+    height: 100%;
+    background-image: url("data:image/svg+xml,"+$experience_tiles)
+  }
+
+  .text-card {
+    padding: 1rem;
+    width: 80%;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+  }
+}
+@media (max-width: 992px) {
+  .arrow {
+    width: 180px;
+    height: 100px;
+
+    &.hidden {
+      display: none;
+    }
+  }
+  .text-body {
+    // text-align: justify;
+    font-size: medium;
+  }
+  .know-me-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: $know_me_bgc;
+    height: fit-content;
+    min-height: 768px;
+    background-image: url("data:image/svg+xml,"+$know_me_tiles)
+  }
+
+  .skills-panel {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: white;
+    height: fit-content;
+    min-height: 768px;
+    // background-image: url("data:image/svg+xml,"+$skill_tiles);
+    z-index: 10;
+  }
+
+  .experience-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: $experience_bgc;
+    height: fit-content;
+    min-height: 768px;
+    background-image: url("data:image/svg+xml,"+$experience_tiles)
+  }
+
+  .text-card {
+    padding: 1rem;
+    width: 80%;
+    height: fit-content;
+    margin-bottom: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 200px;
+    max-width: 720px;
+  }
+}
+.know-me-dark {
+  background-color: $know_me_bgc_dark;
+}
+.skills-dark {
+  background-color: $skills_bgc_dark;
+}
+.experience-dark {
+  background-color: $experience_bgc_dark;
+}
+a {
+  text-decoration: none;
+}
+.title {
+  font-family: pixel-title;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-align: center;
+
+  h1 {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+@media (max-width: $max-width-toggle-navbar) {
+  .title{
+  width: 100%;
+  }
+}
+.cat-sleeping {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  margin-left: auto;
+  margin-top: 0px;
+  background: url('../../assets/images/cat_sleeping.gif') no-repeat center top;
+  background-size: contain;
+}
+
+.arrow {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  text-align: center;
+  background: url('../../assets/images/arrows.gif') no-repeat center top;
+  background-size: contain;
+}
+.bubble-button {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  width: 128px;
+  height: 72px;
+  min-width: 128px;
+  min-height: 72px;
+  text-align: center;
+  background: url('../../assets/images/bubble-150.gif') no-repeat center top;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.bubble-button-text {
+  font-family: pixel;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: #533f03;
+  font-weight: bold;
+}
+
+.cat-frame {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background: url('../../assets/images/cat-frame.png') no-repeat left top;
+  height: 72px;
+  width: 160px;
+  position: fixed;
+  bottom: 128px;
+  right: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+
+.cat-frame-text {
+  font-family: pixel;
+  font-size: smaller;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  margin: 10px;
+  margin-bottom: 18px;
+  margin-top: 22px;
+  text-align: center;
+}
+
+
+.floating-cat {
+  z-index: 65535;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pointer {
+  width: 128px;
+  height: 72px;
+  min-height: 72px;
+  min-width: 128px;
+  text-align: center;
+  background: url('../../assets/images/pointer.gif') no-repeat center top;
+  background-size: contain;
+}
+
+
+.happy {
+  display: inline-block;
+  width: 128px;
+  height: 128px;
+  background: url('../../assets/images/happy.png') no-repeat center top;
+  background-size: contain;
+  cursor: pointer;
+  // position: fixed;
+  // bottom: 0;
+  // right: 0;
+}
+
+.home-panel {
+  background-color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+$hw : 110;
+$wh : calc((50 * $hw) / 86)*1px;
+
+.hexagon{
+  position: absolute;
+  display: flex;
+  top: 20%;
+  left: 5%;
+  background-color: $skills_bgc;
+  width: $hw*1px;
+  height: $wh;
+  z-index: 1;
+  transition: all .5s ease-out;
+  .hexagon-content.text{
+    display: none;
+  }
+  .hexagon-content.icon{
+    display: block;
+  }
+  .hexagon-content.svg{
+    display: block;
+    width: 40px;
+  }
+  &:hover{
+    transform: scale(1.2);
+    transition: all .5s ease-out;
+    .hexagon-content.text{
+      display: block;
+    }
+    .hexagon-content.icon{
+      display: none;
+    }
+    .hexagon-content.svg{
+      display: none;
+    }
+  }
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    width: inherit;
+    height: inherit;
+    transform: rotate(60deg);
+    background-color: inherit;
+  }
+  &::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    width: inherit;
+    height: inherit;
+    transform: rotate(-60deg);
+    background-color: inherit;
+  }
+}
+/* wait autoprefixer update to allow simple generation of high pixel density media query */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (-moz-min-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+}
+
+.hexagon-content{
+  position: absolute;
+  z-index: 2;
+  width: 90%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  color: white;
+  transform: translate(0, -50%);
+  text-align: center;
+  font-weight: bold;
+  line-height: 25px;
+  color: inherit;
+  font-family: 'pixel';
+  font-weight: normal;
+  font-size: 1rem;
+  strong{
+    display: block;
+  }
+  &.text {
+    font-size: 0.7rem;
+  }
+}
+
+.foreground-hex{
+  z-index: 10;
+}
