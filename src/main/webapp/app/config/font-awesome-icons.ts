@@ -10,7 +10,6 @@ import {
   faCloud,
   faCogs,
   faDatabase,
-  faEnvelope,
   faEye,
   faFlag,
   faHeart,
@@ -40,12 +39,7 @@ import {
   faWrench,
   // jhipster-needle-add-icon-import
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-  
-} from '@fortawesome/free-brands-svg-icons'
+
 export const fontAwesomeIcons = [
   faArrowLeft,
   faAsterisk,
@@ -58,13 +52,10 @@ export const fontAwesomeIcons = [
   faCloud,
   faCogs,
   faDatabase,
-  faEnvelope,
   faEye,
   faFlag,
-  faGithub,
   faHeart,
   faHome,
-  faLinkedin,
   faList,
   faLock,
   faPencilAlt,
@@ -83,7 +74,6 @@ export const fontAwesomeIcons = [
   faThList,
   faTimes,
   faTrashAlt,
-  faTwitter,
   faUser,
   faUserPlus,
   faUsers,
