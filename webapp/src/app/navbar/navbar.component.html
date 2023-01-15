@@ -32,8 +32,7 @@
                 <a class="nav-link" (click)="scrollToElement('skills'); collapseNavbar(250)" id="">
                     <span>
                         <!-- <fa-icon icon="flag"></fa-icon> -->
-                        <span class="{{ viewing === 2 ? 'focused' : '' }}"
-                            jhiTranslate="global.menu.skills">Skills</span>
+                        <span class="{{ viewing === 2 ? 'focused' : '' }}">{{ "global.skills" | translate }}</span>
                     </span>
                 </a>
             </li>
@@ -41,8 +40,7 @@
                 <a class="nav-link" (click)="scrollToElement('experience'); collapseNavbar(250)" id="">
                     <span>
                         <!-- <fa-icon icon="flag"></fa-icon> -->
-                        <span class="{{ viewing === 3 ? 'focused' : '' }}"
-                            jhiTranslate="global.menu.experience">Experience</span>
+                        <span class="{{ viewing === 3 ? 'focused' : '' }}">{{ "global.experience" | translate }}</span>
                     </span>
                 </a>
             </li>
@@ -50,7 +48,7 @@
             <li ngbDropdown class="nav-item dropdown pointer" display="dynamic" *ngIf="languages && languages.length > 1">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="languagesnavBarDropdown">
                   <span>
-                    <span>Language</span>
+                    <span>{{ "global.language" | translate }}</span>
                   </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="languagesnavBarDropdown">

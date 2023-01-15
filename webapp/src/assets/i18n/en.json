@@ -1,7 +1,10 @@
 {
     "global": {
         "title": "Meow! I'm Eryalus",
-        "know-me": "Know me"
+        "language": "Language",
+        "know-me": "Know me",
+        "skills": "Skills",
+        "experience": "Experience"
     },
     "banners": {
         "source": "Source code at"

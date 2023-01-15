@@ -1,7 +1,10 @@
 {
     "global": {
         "title": "¡Miau! Soy Eryalus",
-        "know-me": "Sobre mi"
+        "language": "Idioma",
+        "know-me": "Sobre mi",
+        "skills": "Skills",
+        "experience": "Experiencia"
     },
     "banners": {
         "source": "Código fuente en"
