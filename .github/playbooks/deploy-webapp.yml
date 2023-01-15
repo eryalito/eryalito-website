@@ -1,0 +1,21 @@
+---
+- name: Push new webapp version
+  gather_facts: false
+  hosts: 
+    - "{{ lookup('env', 'host') }}"
+  remote_user: "{{ lookup('env', 'host_user') }}"
+
+  tasks:
+    - name: Set bundle vars
+      set_fact:
+        bundle_path: /tmp/bundle.tar
+    - name: Copy tar file
+      copy:
+        src: '{{ bundle_path }}'
+        dest: /tmp/bundle.tar
+        owner: "{{ lookup('env', 'host_user') }}"
+        group: "{{ lookup('env', 'host_user') }}"
+        mode: '0644'
+        backup: yes
+    - name: Unpack bundle on destination
+      raw: rm -rf /var/www/html/* && tar -xf /tmp/bundle.tar -C /var/www/html
