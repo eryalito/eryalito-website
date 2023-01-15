@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test webapp (lint & build)
+    env:
+      working-directory: webapp
+    defaults:
+      run:
+        working-directory: ${{ env.working-directory }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install dependencies
+      run: npm ci
+    - name: Build and pack
+      run: |
+        npm run build --omit=dev
+        (cd dist/webapp && tar -cf /tmp/bundle.tar *)
+    - name: Publish
+      run: |
+        echo "[webservers]" > /tmp/hosts
+        echo ${{ secrets.HOST }} >> /tmp/hosts
+        echo "[defaults]" > ansible.cfg
+        echo "host_key_checking = False" >> ansible.cfg
+        mkdir /root/.ssh
+        echo "${{ SSH_KEY }}" > /root/.ssh/id_rsa
+        chmod 600 /root/.ssh/id_rsa
+        ansible-playbook .github/playbooks/deploy-webapp.yaml -i hosts
