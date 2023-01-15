@@ -1,11 +1,11 @@
-name: CI
+name: CD
 
 on:
   workflow_dispatch:
 
 jobs:
   test:
-    name: Test webapp (lint & build)
+    name: Deploy webapp to server
     env:
       working-directory: webapp
     defaults:
@@ -20,13 +20,17 @@ jobs:
       run: |
         npm run build --omit=dev
         (cd dist/webapp && tar -cf /tmp/bundle.tar *)
+    - name: Decrypt SSH key and add to ssh-agent
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_KEY }}
     - name: Publish
+      env:
+        host: ${{ secrets.HOST }}
+        host_user: ${{ secrets.HOST_USER }}
       run: |
         echo "[webservers]" > /tmp/hosts
-        echo ${{ secrets.HOST }} >> /tmp/hosts
+        echo "$host" >> /tmp/hosts
         echo "[defaults]" > ansible.cfg
         echo "host_key_checking = False" >> ansible.cfg
-        mkdir /root/.ssh
-        echo "${{ SSH_KEY }}" > /root/.ssh/id_rsa
-        chmod 600 /root/.ssh/id_rsa
-        ansible-playbook .github/playbooks/deploy-webapp.yaml -i hosts
+        ansible-playbook ../.github/playbooks/deploy-webapp.yml -i hosts
