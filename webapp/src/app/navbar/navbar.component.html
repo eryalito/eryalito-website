@@ -5,7 +5,7 @@
         aria-label="Toggle navigation" (click)="toggleNavbar()">
         <fa-icon icon="bars"></fa-icon>
     </a>
-    <div class="navbar-collapse collapse navbar-div" id="navbarResponsive">
+    <div class="navbar-collapse navbar-div" id="navbarResponsive" [ngClass]="{'collapse': isNavbarCollapsed}">
         <ul class="navbar-nav ml-auto">
             <a class="navbar-brand logo" (click)="scrollToElement('hello'); collapseNavbar(250)">
                 <span class="logo-img"></span>
