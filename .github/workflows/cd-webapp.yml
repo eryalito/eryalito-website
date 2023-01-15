@@ -14,17 +14,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Decrypt SSH key and add to ssh-agent
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.SSH_KEY }}
-        known_hosts: ${{ secrets.SSH_KNOW_HOST }}
     - name: Install dependencies
       run: npm ci
     - name: Build and pack
       run: |
         npm run build --omit=dev
         (cd dist/webapp && tar -cf /tmp/bundle.tar *)
+    - name: Decrypt SSH key and add to ssh-agent
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_KEY }}
+        known_hosts: ${{ secrets.SSH_KNOW_HOST }}
     - name: Publish
       env:
         host: ${{ secrets.HOST }}
@@ -34,4 +34,4 @@ jobs:
         echo "$host" >> /tmp/hosts
         echo "[defaults]" > ansible.cfg
         echo "host_key_checking = False" >> ansible.cfg
-        ansible-playbook ../.github/playbooks/deploy-webapp.yml -i hosts
+        ansible-playbook ../.github/playbooks/deploy-webapp.yml -i /tmp/hosts
