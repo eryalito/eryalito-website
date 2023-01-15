@@ -1,7 +1,10 @@
 {
     "global": {
         "title": "Miau! Son Eryalus",
-        "know-me": "Sobre min"
+        "language": "Idioma",
+        "know-me": "Sobre min",
+        "skills": "Skills",
+        "experience": "Experiencia"
     },
     "banners": {
         "source": "Código fonte en"
