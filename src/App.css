@@ -101,8 +101,8 @@
   color: inherit;
 }
 .btn.primary {
-  background: color-mix(in hsl, var(--accent, #646cff) 20%, transparent);
-  border-color: color-mix(in hsl, var(--accent, #646cff) 40%, transparent);
+  background: color-mix(in hsl, var(--accent, oklch(97.3% 0.071 103.193)) 20%, transparent);
+  border-color: color-mix(in hsl, var(--accent, oklch(97.3% 0.071 103.193)) 40%, transparent);
 }
 .inline-link {
   margin-left: 0.3rem;

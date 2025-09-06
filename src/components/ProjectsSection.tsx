@@ -1,22 +1,45 @@
 
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRobot, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faTelegram } from '@fortawesome/free-brands-svg-icons';
 
 const projects = [
   {
-    title: "Personal Portfolio",
-    description: "A modern, responsive website to showcase my work and skills.",
-    link: "https://github.com/eryalito/portfolio"
+    title: "KubeNSync",
+    description: "A Kubernetes operator designed to simplify resource management across namespaces and the entire cluster.",
+    link: "https://kubensync.com/",
+    svg: "/kubernetes.svg",
+    icons: [faGlobe]
   },
   {
-    title: "Game Tracker",
-    description: "A web app to track and review video games I've played.",
-    link: "https://github.com/eryalito/game-tracker"
+    title: "FofonsoBot",
+    description: "Telegram bot with basic tasks on groups: random number, custom messages, etc.",
+    link: "https://github.com/eryalito/fofonso",
+    svg: null,
+    icons: [faRobot, faTelegram, faGithub]
   },
   {
-    title: "Cat Gallery",
-    description: "A fun project to display random cat images using an API.",
-    link: "https://github.com/eryalito/cat-gallery"
-  }
+    title: "BusVigoBot",
+    description: "Telegram bot with real-time bus information for Vigo.",
+    link: "https://t.me/busvigobot",
+    svg: null,
+    icons: [faRobot, faTelegram]
+  },
+  {
+    title: "This??",
+    description: "Well... Just this site, you can look around if you want",
+    link: "https://github.com/eryalito/eryalito-website",
+    svg: null,
+    icons: [faGithub]
+  },
+  {
+    title: "More Random Stuff",
+    description: "You can find more random stuff here",
+    link: "https://github.com/eryalito",
+    svg: null,
+    icons: [faGithub]
+  },
 ];
 
 
@@ -29,22 +52,27 @@ const ProjectsSection: React.FC = () => (
       <h1 className="mb-8 font-bold text-3xl tracking-wide text-center text-primary">Projects</h1>
       <div className="flex flex-wrap justify-center gap-8">
         {projects.map((project, i) => (
-          <div
+          <a
             key={i}
-            className={`rounded-md px-6 py-4 w-80 max-w-full flex flex-col items-start font-pixel transition-transform hover:scale-105 border relative z-10 ${cardColorClass}`}
-            style={{ boxShadow: '0 4px 16px 0 rgba(0,0,0,0.10)', transform: `rotate(${(Math.random() * 6 - 3).toFixed(2)}deg)` }}
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`rounded-md px-6 py-4 w-96 max-w-full flex flex-col items-start font-pixel transition-transform hover:scale-105 border relative z-10 ${cardColorClass}`}
+            style={{ boxShadow: '0 4px 16px 0 rgba(0,0,0,0.10)', transform: `rotate(${(Math.random() * 6 - 3).toFixed(2)}deg)`, textDecoration: 'none', color: '#27272a' }}
+            title={project.title}
           >
-            <h2 className="text-xl mb-2">{project.title}</h2>
-            <p className="mb-4 text-zinc-700 font-sans font-pixel">{project.description}</p>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary font-bold underline hover:text-secondary"
-            >
-              View on GitHub
-            </a>
-          </div>
+            <h2 className="text-xl mb-2" style={{ color: '#27272a', textDecoration: 'none' }}>{project.title}</h2>
+            <p className="mb-4 text-zinc-700 font-sans font-pixel" style={{ color: '#27272a', textDecoration: 'none' }}>{project.description}</p>
+            <span className="font-bold mt-auto flex items-center gap-2" style={{ color: '#27272a', textDecoration: 'none' }}>
+              {project.svg ? (
+                <img src={project.svg} alt={project.title + ' logo'} style={{ height: '1.5em', width: '1.5em' }} />
+              ) : (
+                project.icons && project.icons.map((icon, idx) => (
+                  <FontAwesomeIcon icon={icon} size="lg" key={idx} />
+                ))
+              )}
+            </span>
+          </a>
         ))}
       </div>
     </div>

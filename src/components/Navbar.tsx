@@ -78,7 +78,6 @@ const Navbar = ({ handleNavClick }: NavbarProps) => {
                 <FontAwesomeIcon
                   icon={faLinkedin}
                   className="text-white transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-12 group-focus:scale-125 group-focus:-rotate-12"
-                  style={{ color: 'white' }}
                 />
               </a>
               <a
@@ -91,7 +90,6 @@ const Navbar = ({ handleNavClick }: NavbarProps) => {
                 <FontAwesomeIcon
                   icon={faGithub}
                   className="text-white transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-12 group-focus:scale-125 group-focus:-rotate-12"
-                  style={{ color: 'white' }}
                 />
               </a>
               <a
