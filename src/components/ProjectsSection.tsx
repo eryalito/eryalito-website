@@ -9,7 +9,7 @@ const projects = [
     title: "KubeNSync",
     description: "A Kubernetes operator designed to simplify resource management across namespaces and the entire cluster.",
     link: "https://kubensync.com/",
-    svg: "/kubernetes.svg",
+    svg: import.meta.env.BASE_URL + 'images/kubernetes.svg',
     icons: [faGlobe]
   },
   {

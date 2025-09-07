@@ -4,7 +4,7 @@
 /* Custom fonts */
 @font-face {
   font-family: "Pixel";
-  src: url("/fonts/pixel.ttf") format("truetype");
+  src: url("../fonts/pixel.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "Pixel Title";
-  src: url("/fonts/pixel_title.ttf") format("truetype");
+  src: url("../fonts/pixel_title.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

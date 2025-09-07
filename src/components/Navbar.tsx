@@ -31,7 +31,7 @@ const Navbar = ({ handleNavClick }: NavbarProps) => {
         <div className="flex flex-row items-center justify-between px-4 py-4 w-full">
           <div className="flex flex-col items-start md:items-center w-full">
             <img
-              src="/logo.png"
+              src={import.meta.env.BASE_URL + 'logo.png'}
               alt="Eryalito Logo"
               className="hidden md:block w-16 h-16 mb-2 mx-auto"
             />
