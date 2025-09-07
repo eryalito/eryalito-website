@@ -57,7 +57,7 @@ const ProjectsSection: React.FC = () => (
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`rounded-md px-6 py-4 w-96 max-w-full flex flex-col items-start font-pixel transition-transform hover:scale-105 border relative z-10 ${cardColorClass}`}
+            className={`rounded-md px-6 py-4 w-96 max-w-full flex flex-col items-start font-pixel transition-transform hover:scale-105 border relative ${cardColorClass}`}
             style={{ boxShadow: '0 4px 16px 0 rgba(0,0,0,0.10)', transform: `rotate(${(Math.random() * 6 - 3).toFixed(2)}deg)`, textDecoration: 'none', color: '#27272a' }}
             title={project.title}
           >

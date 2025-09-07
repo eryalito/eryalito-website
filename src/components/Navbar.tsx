@@ -26,7 +26,7 @@ const Navbar = ({ handleNavClick }: NavbarProps) => {
   };
 
   return (
-    <nav className="sidebar bg-gray-900 text-white flex-shrink-0 md:w-64 w-full md:min-h-screen">
+    <nav className="sidebar text-white flex-shrink-0 md:w-64 w-full md:min-h-screen">
       <div className="flex flex-col h-full w-full">
         <div className="flex flex-row items-center justify-between px-4 py-4 w-full">
           <div className="flex flex-col items-start md:items-center w-full">

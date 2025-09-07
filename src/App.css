@@ -6,6 +6,7 @@
   --sidebar-w: 260px;
   display: grid;
   grid-template-columns: var(--sidebar-w) 1fr;
+  background-color: #1f1f21;
   min-height: 100dvh;
 }
 

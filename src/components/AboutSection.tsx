@@ -23,14 +23,14 @@ const AboutSection: React.FC = () => {
           {postits.map((text, i) => (
             <React.Fragment key={i}>
               <div
-                className="bg-yellow-100 shadow-lg rounded-md px-6 py-4 mb-2 font-pixel text-zinc-800 w-full max-w-2xl relative z-10"
+                className="bg-yellow-100 shadow-lg rounded-md px-6 py-4 mb-2 font-pixel text-zinc-800 w-full max-w-2xl relative"
                 style={{ transform: `rotate(${rotations[i]}deg)` }}
               >
                 {text}
               </div>
               {i < postits.length - 1 && (
                 // Pixel-art style arrow SVG
-                <svg className="w-8 h-8 text-yellow-300 -my-2 z-0" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-8 h-8 text-yellow-300 -my-2" viewBox="0 0 24 24" fill="currentColor">
                   {/* Pixel arrow: vertical line with blocky arrowhead */}
                   <rect x="11" y="2" width="2" height="14" />
                   <rect x="8" y="16" width="8" height="2" />
