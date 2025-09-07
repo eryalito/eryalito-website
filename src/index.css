@@ -1,0 +1,57 @@
+
+@import "tailwindcss";
+
+/* Custom fonts */
+@font-face {
+  font-family: "Pixel";
+  src: url("../fonts/pixel.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pixel Title";
+  src: url("../fonts/pixel_title.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Simple utility classes to use these fonts */
+.font-pixel { font-family: "Pixel", system-ui, Arial, sans-serif; }
+.font-pixel-title { font-family: "Pixel Title", system-ui, Arial, sans-serif; }
+:root {
+  --accent: #646cff;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1f1f21;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a { color: var(--accent); }
+a:hover { opacity: 0.85; }
+
+h1, h2, h3 { line-height: 1.2; }
+h1 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #1b1b1f;
+    background-color: #ffffff;
+  }
+}
