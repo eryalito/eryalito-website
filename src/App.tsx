@@ -4,6 +4,7 @@ import ProjectsSection from './components/ProjectsSection';
 import SkillsSection from './components/SkillsSection';
 import ContactSection from './components/ContactSection';
 import Navbar from './components/Navbar';
+import IterativeCat from './components/IterativeCat';
 
 function App() {
   const handleNavClick = (id: string) => {
@@ -21,6 +22,7 @@ function App() {
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
+        <IterativeCat />
         {/* <footer className="footer">© {new Date().getFullYear()} Eryalito</footer> */}
       </main>
     </div>
