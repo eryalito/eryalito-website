@@ -23,24 +23,31 @@ const ContactSection: React.FC = () => {
       <div className="mx-auto px-4 py-10">
         <h1 className="mb-8 font-bold text-3xl tracking-wide text-center text-primary">Contact</h1>
 
-        {/* Retro terminal-style panel */}
-        <div className="mx-auto max-w-3xl rounded-xl border border-zinc-700 bg-zinc-900/60 backdrop-blur overflow-hidden shadow-2xl">
-          <div className="flex items-center gap-2 px-4 py-2 border-b border-zinc-800 bg-zinc-950">
-            <span className="h-3 w-3 rounded-full bg-red-500/80" />
-            <span className="h-3 w-3 rounded-full bg-yellow-400/80" />
-            <span className="h-3 w-3 rounded-full bg-green-500/80" />
-            <span className="ml-auto text-xs text-zinc-400 font-mono">bash</span>
-          </div>
-          <div className="px-4 py-5 font-mono text-sm leading-relaxed text-zinc-200">
-            <div className="text-zinc-400">$ whoami</div>
-            <div className="mb-4">eryalito</div>
+        <div className="relative mx-auto max-w-3xl mt-24">
+          <img
+            src={import.meta.env.BASE_URL + 'images/cat_sleeping.gif'}
+            alt="Eryalito Logo"
+            className="absolute top-0 right-0 w-12 h-8 sm:w-16 sm:h-8 -translate-y-full object-contain"
+          />
+          {/* Retro terminal-style panel */}
+          <div className="rounded-xl border border-zinc-700 bg-zinc-900/60 backdrop-blur overflow-hidden shadow-2xl">
+            <div className="flex items-center gap-2 px-4 py-2 border-b border-zinc-800 bg-zinc-950">
+              <span className="h-3 w-3 rounded-full bg-red-500/80" />
+              <span className="h-3 w-3 rounded-full bg-yellow-400/80" />
+              <span className="h-3 w-3 rounded-full bg-green-500/80" />
+              <span className="ml-auto text-xs text-zinc-400 font-mono">bash</span>
+            </div>
+            <div className="px-4 py-5 font-mono text-sm leading-relaxed text-zinc-200">
+              <div className="text-zinc-400">$ whoami</div>
+              <div className="mb-4">eryalito</div>
 
-            <div className="text-zinc-400">$ /bin/bash ~/show_contact.sh</div>
-            <div className="mb-2">Email: <span className="text-white">{EMAIL}</span></div>
-            <div className="mb-2">LinkedIn: <a href="https://www.linkedin.com/in/adrian-cameselle/" target="_blank" rel="noopener noreferrer" className="text-white underline">adrian-cameselle</a></div>
-            <div className="mb-4">GitHub: <a href="https://github.com/eryalito" target="_blank" rel="noopener noreferrer" className="text-white underline">eryalito</a></div>
+              <div className="text-zinc-400">$ /bin/bash ~/show_contact.sh</div>
+              <div className="mb-2">Email: <span className="text-white">{EMAIL}</span></div>
+              <div className="mb-2">LinkedIn: <a href="https://www.linkedin.com/in/adrian-cameselle/" target="_blank" rel="noopener noreferrer" className="text-white underline">adrian-cameselle</a></div>
+              <div className="mb-4">GitHub: <a href="https://github.com/eryalito" target="_blank" rel="noopener noreferrer" className="text-white underline">eryalito</a></div>
 
-            <div className="text-zinc-400">$ _</div>
+              <div className="text-zinc-400">$ _</div>
+            </div>
           </div>
         </div>
 
