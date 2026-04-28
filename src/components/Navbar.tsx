@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faTools, faLightbulb, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -19,10 +20,16 @@ interface NavbarProps {
 
 const Navbar = ({ handleNavClick }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const onLinkClick = (id: string) => {
-    handleNavClick(id);
     setMenuOpen(false);
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => handleNavClick(id), 100);
+    } else {
+      handleNavClick(id);
+    }
   };
 
   return (
