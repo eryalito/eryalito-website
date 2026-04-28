@@ -3,9 +3,15 @@ import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { getPostBySlug } from './Blog';
 
+interface PostWithDate {
+  date: string;
+  category: string;
+}
+
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const [content, setContent] = useState<string>('');
+  const [postMeta, setPostMeta] = useState<PostWithDate | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -18,6 +24,8 @@ const BlogPost = () => {
         setLoading(false);
         return;
       }
+
+      setPostMeta({ date: post.date, category: post.category });
 
       fetch(post.path)
         .then((res) => {
@@ -55,6 +63,13 @@ const BlogPost = () => {
   return (
     <article className="mx-auto px-4 py-10 max-w-3xl">
       <Link to="/blog" className="inline-block mb-4 text-zinc-400 hover:text-white">&larr; Back to Blog</Link>
+      {postMeta && (
+        <div className="mb-6 text-zinc-400 text-sm">
+          <span>{postMeta.date}</span>
+          <span className="mx-2">·</span>
+          <span className="capitalize">{postMeta.category}</span>
+        </div>
+      )}
       <div className="prose prose-invert max-w-none">
         <ReactMarkdown>{content}</ReactMarkdown>
       </div>
