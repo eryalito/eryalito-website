@@ -1,9 +1,10 @@
 import './App.css';
-import AboutSection from './components/AboutSection';
-import ProjectsSection from './components/ProjectsSection';
-import SkillsSection from './components/SkillsSection';
-import ContactSection from './components/ContactSection';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import Navbar from './components/Navbar';
+import BlogButton from './components/BlogButton';
 import IterativeCat from './components/IterativeCat';
 
 function App() {
@@ -18,13 +19,14 @@ function App() {
     <div className="app-container flex flex-col md:flex-row min-h-screen">
       <Navbar handleNavClick={handleNavClick} />
       <main className="main-content flex-1 w-full">
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ContactSection />
-        <IterativeCat />
-        {/* <footer className="footer">© {new Date().getFullYear()} Eryalito</footer> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+        </Routes>
       </main>
+      <BlogButton />
+      <IterativeCat />
     </div>
   );
 }

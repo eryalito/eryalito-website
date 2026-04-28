@@ -1,0 +1,65 @@
+import { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import { getPostBySlug } from './Blog';
+
+const BlogPost = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const [content, setContent] = useState<string>('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    if (!slug) return;
+
+    getPostBySlug(slug).then((post) => {
+      if (!post) {
+        setError(true);
+        setLoading(false);
+        return;
+      }
+
+      fetch(post.path)
+        .then((res) => {
+          if (!res.ok) throw new Error('Not found');
+          return res.text();
+        })
+        .then((text) => {
+          setContent(text);
+          setLoading(false);
+        })
+        .catch(() => {
+          setError(true);
+          setLoading(false);
+        });
+    });
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="mx-auto px-4 py-10">
+        <p className="text-center">Loading...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="mx-auto px-4 py-10">
+        <p className="text-center">Post not found</p>
+        <Link to="/blog" className="block text-center mt-4">Back to Blog</Link>
+      </div>
+    );
+  }
+
+  return (
+    <article className="mx-auto px-4 py-10 max-w-3xl">
+      <Link to="/blog" className="inline-block mb-4 text-zinc-400 hover:text-white">&larr; Back to Blog</Link>
+      <div className="prose prose-invert max-w-none">
+        <ReactMarkdown>{content}</ReactMarkdown>
+      </div>
+    </article>
+  );
+};
+
+export default BlogPost;
