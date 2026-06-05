@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { getPostBySlug } from './Blog';
+import remarkGfm from 'remark-gfm';
 
 interface PostWithDate {
   date: string;
@@ -71,7 +72,7 @@ const BlogPost = () => {
         </div>
       )}
       <div className="prose prose-invert max-w-none">
-        <ReactMarkdown>{content}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
       </div>
     </article>
   );
