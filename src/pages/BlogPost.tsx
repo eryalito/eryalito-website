@@ -62,7 +62,7 @@ const BlogPost = () => {
   }
 
   return (
-    <article className="mx-auto px-4 py-10 max-w-3xl">
+    <article className="mx-auto px-4 py-10 pb-40 max-w-3xl">
       <Link to="/blog" className="inline-block mb-4 text-zinc-400 hover:text-white">&larr; Back to Blog</Link>
       {postMeta && (
         <div className="mb-6 text-zinc-400 text-sm">

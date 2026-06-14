@@ -35,7 +35,7 @@ const Blog = () => {
 
   return (
     <section id="blog" className="section">
-      <div className="mx-auto px-4 py-10">
+      <div className="mx-auto px-4 py-10 pb-40">
         <h1 className="mb-8 font-bold text-3xl tracking-wide text-center text-primary">Blog</h1>
         {loading ? (
           <p className="text-center">Loading...</p>
