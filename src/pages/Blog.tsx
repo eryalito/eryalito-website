@@ -1,30 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-
-interface PostMeta {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  category: string;
-  path: string;
-}
-
-const getPostMetadata = async (): Promise<PostMeta[]> => {
-  try {
-    const response = await fetch('/posts/index.json');
-    if (!response.ok) throw new Error('Failed to fetch');
-    const posts = await response.json();
-    return posts.sort((a: PostMeta, b: PostMeta) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  } catch {
-    return [];
-  }
-};
-
-const getPostBySlug = async (slug: string): Promise<PostMeta | null> => {
-  const posts = await getPostMetadata();
-  return posts.find(p => p.slug === slug) || null;
-};
+import { getPostMetadata, type PostMeta } from '../lib/posts';
 
 const palette = [
   '#fecaca', // red
@@ -94,5 +70,4 @@ const Blog = () => {
   );
 };
 
-export { getPostBySlug };
 export default Blog;
