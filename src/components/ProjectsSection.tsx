@@ -46,6 +46,9 @@ const projects = [
 // Reusable card color classes for post-it style
 const cardColorClass = "bg-yellow-100 border-yellow-200 text-zinc-800 shadow-lg";
 
+// Random rotation for each card, fixed per page load (-3deg to +3deg)
+const rotations = projects.map(() => (Math.random() * 6 - 3).toFixed(2));
+
 const ProjectsSection: React.FC = () => (
   <section id="projects" className="section">
     <div className="mx-auto px-4 py-10">
@@ -58,7 +61,7 @@ const ProjectsSection: React.FC = () => (
             target="_blank"
             rel="noopener noreferrer"
             className={`rounded-md px-6 py-4 w-96 max-w-full flex flex-col items-start font-pixel transition-transform hover:scale-105 border relative ${cardColorClass}`}
-            style={{ boxShadow: '0 4px 16px 0 rgba(0,0,0,0.10)', transform: `rotate(${(Math.random() * 6 - 3).toFixed(2)}deg)`, textDecoration: 'none', color: '#27272a' }}
+            style={{ boxShadow: '0 4px 16px 0 rgba(0,0,0,0.10)', transform: `rotate(${rotations[i]}deg)`, textDecoration: 'none', color: '#27272a' }}
             title={project.title}
           >
             <h2 className="text-xl mb-2" style={{ color: '#27272a', textDecoration: 'none' }}>{project.title}</h2>
