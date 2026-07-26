@@ -14,5 +14,13 @@
     "date": "2026-06-05",
     "category": "thoughts",
     "path": "/posts/2026/06/odysseus-pewdiepie-ai-workspace.md"
+  },
+  {
+    "slug": "ai-coding-tools-auto-mode",
+    "title": "Why I Am Worried About Auto Mode in AI Coding Tools",
+    "description": "Manual command approval is a burden nobody can really sustain, so tools now let a classifier model decide. Here's why that trade worries me, and what I'd want instead.",
+    "date": "2026-07-26",
+    "category": "thoughts",
+    "path": "/posts/2026/07/ai-coding-tools-auto-mode.md"
   }
 ]
