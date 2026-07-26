@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 const postits = [
   "Hey, welcome! I'm Eryalito, but you can call me Ery.",
@@ -9,12 +9,10 @@ const postits = [
   "But what I really am is a cat lover."
 ];
 
-const AboutSection: React.FC = () => {
-  // Generate random rotation for each post-it on each reload
-  const rotations = useMemo(() =>
-    postits.map(() => (Math.random() * 6 - 3).toFixed(2)), // -3deg to +3deg
-  []);
+// Random rotation for each post-it, fixed per page load (-3deg to +3deg)
+const rotations = postits.map(() => (Math.random() * 6 - 3).toFixed(2));
 
+const AboutSection: React.FC = () => {
   return (
     <section id="about" className="section">
       <div className="mx-auto px-4 py-10">
